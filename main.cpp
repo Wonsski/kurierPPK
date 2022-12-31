@@ -9,11 +9,10 @@ int main(int argc, char *args[]){
     if(argc==1){
         wypiszInstrukcje();
     }else{ //Dla przynajmniej jednego arguementu
-        //std::vector< std::vector<double> > odleglosci;
         
-        wczytajPlik(args[1]);
+        std::pair<int,double**> macierzOdleglosci = wczytajPlik(args[1]);
 
-        //wypiszOdleglosci(odleglosci);
+        wypiszOdleglosci(macierzOdleglosci);
     }
 
     return 0;
