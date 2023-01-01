@@ -27,7 +27,7 @@ void szukajTrasy(int pozycja, std::pair<int,double**> macierzOdleglosci, std::ve
     int wielkoscMacierzy = macierzOdleglosci.first;
     double** odleglosci = macierzOdleglosci.second;
 
-    //Czy wszyscy odwiedzeni liczba odwiedzonych == liczba klientow
+    //Czy wszystkich odwiedzilismy       liczba odwiedzonych == liczba klientow
     if(pozycja == wielkoscMacierzy){
 
 
@@ -78,7 +78,7 @@ std::vector< std::vector<int> > znajdzDostepneTrasy(std::pair<int,double**> maci
 
 void rysujTrase(std::vector<int> trasa){
     for(int i=0; i<trasa.size(); i++){
-        std::cout << '(' << trasa[i];
+        std::cout << '(' << trasa[i]+1;
 
         if(i==trasa.size()-1){
             std::cout<< ')';
@@ -103,7 +103,7 @@ double obliczDlugoscTrasy(std::vector<int> trasa, std::pair<int,double**> macier
     double dlugoscTrasy = 0;
 
     for(int i=1; i<trasa.size(); i++){
-        dlugoscTrasy += odleglosci[i-1][i];
+        dlugoscTrasy += odleglosci[trasa[i-1]][trasa[i]];
     }
 
     return dlugoscTrasy;

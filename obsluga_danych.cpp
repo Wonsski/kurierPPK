@@ -6,7 +6,7 @@
 #include "struktury.h"
 
 void wypiszInstrukcje(){
-    std::cout << "Uzycie programu:" << std::endl << "./a.out nazwa_pliku" << std::endl;
+    std::cout << "Uzycie programu:" << std::endl << "./a.out nazwa_pliku" << std::endl << "./a.out -v nazwa_pliku" << std::endl;
 }
 
 std::pair<int,double**> wczytajPlik(const std::string nazwa_pliku){

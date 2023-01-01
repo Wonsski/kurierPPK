@@ -11,19 +11,37 @@ int main(int argc, char *args[]){
         wypiszInstrukcje();
     }else{ //Dla przynajmniej jednego argumentu
         
-        //Wczytywanie danych
-        std::pair<int,double**> macierzOdleglosci = wczytajPlik(args[1]);
+        bool wypisuj = false;
+        std::pair<int,double**> macierzOdleglosci;
 
-        //Wypisanie wczytanych danych
-        wypiszOdleglosci(macierzOdleglosci);
+        if(strcmp( args[1], "-v") == 0){
+
+            wypisuj=true;
+
+            //Wczytywanie danych
+            macierzOdleglosci = wczytajPlik(args[2]);
+        }else{
+
+            //Wczytywanie danych
+            macierzOdleglosci = wczytajPlik(args[1]);
+        }
+
+        
+
+        if(wypisuj){
+            //Wypisanie wczytanych danych
+            wypiszOdleglosci(macierzOdleglosci);
+        }
 
         //Generowanie dostepnych tras
         std::vector< std::vector<int> >znalezioneTrasy = znajdzDostepneTrasy(macierzOdleglosci);
         
         if(znalezioneTrasy.size()>0){
-
-            //Wypisanie znalezionych tras
-            wypiszZnalezioneTrasy(znalezioneTrasy);
+            
+            if(wypisuj){
+                //Wypisanie znalezionych tras
+                wypiszZnalezioneTrasy(znalezioneTrasy);
+            }
 
             //Znalezienie najkrotszej trasy
             std::pair<double, std::vector<int> > najkrotszaTrasa = wybierzNajkrotszaTrase(znalezioneTrasy,macierzOdleglosci);
