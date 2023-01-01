@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 
+#include "obsluga_danych.h"
+
 bool czyMozeJechac(int klient, int pozycja, std::pair<int,double**> macierzOdleglosci, std::vector<int> trasa){
 
     int wielkoscMacierzy = macierzOdleglosci.first;
@@ -28,7 +30,7 @@ void szukajTrasy(int pozycja, std::pair<int,double**> macierzOdleglosci, std::ve
     double** odleglosci = macierzOdleglosci.second;
 
     //Czy wszystkich odwiedzilismy       liczba odwiedzonych == liczba klientow
-    if(pozycja == wielkoscMacierzy){
+    if(pozycja == ileKlientow(macierzOdleglosci)){
 
 
         //Czy ostatni klient ma polaczenie z pierwszym klientem (domkniecie trasy)
@@ -70,7 +72,6 @@ std::vector< std::vector<int> > znajdzDostepneTrasy(std::pair<int,double**> maci
     trasa.push_back(0); //Dodajemy 0 (Klient nr 1) jako rozpoczynajacego trase
 
     //Szukanie trasy
-
     szukajTrasy(1, macierzOdleglosci, znalezioneTrasy, trasa);
 
     return znalezioneTrasy;
@@ -115,7 +116,7 @@ std::pair<double, std::vector<int> > wybierzNajkrotszaTrase(std::vector< std::ve
     int indeksNajkrotszejTrasy = 0; //Domyslne pierwsza trasa najkrotsza
     double dlugoscNajkrotszejTrasy = obliczDlugoscTrasy(znalezioneTrasy[0],macierzOdleglosci);
 
-    //Dla kazdej trasy
+    //Dla pozostalych tras
     for(int i=1; i<znalezioneTrasy.size(); i++){
         double dlugoscTrasy = obliczDlugoscTrasy(znalezioneTrasy[i],macierzOdleglosci);
 
@@ -124,6 +125,7 @@ std::pair<double, std::vector<int> > wybierzNajkrotszaTrase(std::vector< std::ve
         }
     }
 
+    //Spakowanie wynikow
     std::pair<double, std::vector<int> > wynik;
     wynik.first = dlugoscNajkrotszejTrasy;
     wynik.second = znalezioneTrasy[indeksNajkrotszejTrasy];

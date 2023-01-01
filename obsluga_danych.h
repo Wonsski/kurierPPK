@@ -20,4 +20,11 @@ std::pair<int,double**> wczytajPlik(const std::string nazwa_pliku);
  * @param macierzOdleglosci Struktura zawierajaca wielkosc macierzy oraz macierz z danymi wejsciowymi
 */
 void wypiszOdleglosci(std::pair<int,double**> macierzOdleglosci);
+
+/**
+ * Funkcja zwraca liczbe klientow (gdyby numery klientow byly nie po kolei)
+ * @return Zwraca liczbe klientow
+ * @param macierzOdleglosci Struktura zawierajaca wielkosc macierzy oraz macierz z danymi wejsciowymi
+*/
+int ileKlientow(std::pair<int,double**> macierzOdleglosci);
 #endif

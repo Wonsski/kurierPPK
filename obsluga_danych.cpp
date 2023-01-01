@@ -105,3 +105,22 @@ void wypiszOdleglosci(std::pair<int,double**> macierzOdleglosci){
     }
 
 }
+
+int ileKlientow(std::pair<int,double**> macierzOdleglosci){
+    int wielkoscMacierzy = macierzOdleglosci.first;
+    double** odleglosci = macierzOdleglosci.second;
+
+    int pustyKlient = 0;
+
+    for(int i=0; i<wielkoscMacierzy; i++){
+        double suma = 0;
+        for(int j=0; j<wielkoscMacierzy; j++){
+            suma += odleglosci[i][j];
+        }
+        if(suma==0){
+            pustyKlient++;
+        }
+    }
+
+    return wielkoscMacierzy-pustyKlient;
+}
