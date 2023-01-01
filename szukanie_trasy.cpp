@@ -7,7 +7,7 @@ bool czyMozeJechac(int klient, int pozycja, std::pair<int,double**> macierzOdleg
     double** odleglosci = macierzOdleglosci.second;
 
     //Sprawdzenie czy mozna sie poruszyc z konkretnej pozycji do celu
-    //       Aktualne polozenie      Cel
+    //       Aktualne polozenie      Cel     Brak połączenia
     if(odleglosci[trasa[pozycja-1]][klient] == 0){
         return false;
     }
@@ -22,7 +22,7 @@ bool czyMozeJechac(int klient, int pozycja, std::pair<int,double**> macierzOdleg
 }
 
 
-void szukajTrasy(int pozycja, std::pair<int,double**> macierzOdleglosci, std::vector< std::vector<int> > &znalezioneTrasy, std::vector<int> trasa, bool odwiedzeni[]){
+void szukajTrasy(int pozycja, std::pair<int,double**> macierzOdleglosci, std::vector< std::vector<int> > &znalezioneTrasy, std::vector<int> trasa){
 
     int wielkoscMacierzy = macierzOdleglosci.first;
     double** odleglosci = macierzOdleglosci.second;
@@ -51,7 +51,7 @@ void szukajTrasy(int pozycja, std::pair<int,double**> macierzOdleglosci, std::ve
             trasa.push_back(i);
 
             //Szukanie dalszej trasy
-            szukajTrasy(pozycja+1, macierzOdleglosci, znalezioneTrasy, trasa, odwiedzeni);
+            szukajTrasy(pozycja+1, macierzOdleglosci, znalezioneTrasy, trasa);
             
             //Usuniecie klienta z trasy i szukanie innych opcji
             trasa.pop_back();
@@ -69,15 +69,9 @@ std::vector< std::vector<int> > znajdzDostepneTrasy(std::pair<int,double**> maci
     std::vector<int> trasa;
     trasa.push_back(0); //Dodajemy 0 (Klient nr 1) jako rozpoczynajacego trase
 
-    bool odwiedzeni[macierzOdleglosci.first];
-    for(int i=0; i<macierzOdleglosci.first; i++){
-        odwiedzeni[i] = false;
-    }
-    odwiedzeni[0] = true; //Ustawiamy pierwszego klienta jako odwiedzonego
-
     //Szukanie trasy
 
-    szukajTrasy(1, macierzOdleglosci, znalezioneTrasy, trasa, odwiedzeni);
+    szukajTrasy(1, macierzOdleglosci, znalezioneTrasy, trasa);
 
     return znalezioneTrasy;
 }
@@ -99,4 +93,41 @@ void wypiszZnalezioneTrasy(std::vector< std::vector<int> > znalezioneTrasy){
     for(int i=0; i<znalezioneTrasy.size(); i++){    
         rysujTrase(znalezioneTrasy[i]);
     }
+}
+
+double obliczDlugoscTrasy(std::vector<int> trasa, std::pair<int,double**> macierzOdleglosci){
+    
+    int wielkoscMacierzy = macierzOdleglosci.first;
+    double** odleglosci = macierzOdleglosci.second;
+
+    double dlugoscTrasy = 0;
+
+    for(int i=1; i<trasa.size(); i++){
+        dlugoscTrasy += odleglosci[i-1][i];
+    }
+
+    return dlugoscTrasy;
+}
+
+
+std::pair<double, std::vector<int> > wybierzNajkrotszaTrase(std::vector< std::vector<int> > znalezioneTrasy, std::pair<int,double**> macierzOdleglosci){
+
+    int indeksNajkrotszejTrasy = 0; //Domyslne pierwsza trasa najkrotsza
+    double dlugoscNajkrotszejTrasy = obliczDlugoscTrasy(znalezioneTrasy[0],macierzOdleglosci);
+
+    //Dla kazdej trasy
+    for(int i=1; i<znalezioneTrasy.size(); i++){
+        double dlugoscTrasy = obliczDlugoscTrasy(znalezioneTrasy[i],macierzOdleglosci);
+
+        if(dlugoscTrasy<dlugoscNajkrotszejTrasy){
+            indeksNajkrotszejTrasy = i;
+        }
+    }
+
+    std::pair<double, std::vector<int> > wynik;
+    wynik.first = dlugoscNajkrotszejTrasy;
+    wynik.second = znalezioneTrasy[indeksNajkrotszejTrasy];
+
+    return wynik;
+
 }

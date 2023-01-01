@@ -9,6 +9,7 @@
 void wypiszInstrukcje();
 
 /**
+ * Funkcja wczytujace dane z pliku wejsciowego i normalizujaca dane wejsciowe do odpowiedniego formatu
  * @return Zwraca macierz zawierającą odleglosci pomiedzy wszystkimi punktami
  * @param nazwa_pliku Nazwa pliku tekstowego z którego wczytujemy dane wejściowe
 */
@@ -16,7 +17,7 @@ std::pair<int,double**> wczytajPlik(const std::string nazwa_pliku);
 
 /**
  * Funkcja wypisuje zawartosc macierzy zawierajacej odleglosci
- * @param macierzOdleglosci struktura zawierajaca wielkosc macierzy oraz macierz
+ * @param macierzOdleglosci Struktura zawierajaca wielkosc macierzy oraz macierz z danymi wejsciowymi
 */
 void wypiszOdleglosci(std::pair<int,double**> macierzOdleglosci);
 #endif
