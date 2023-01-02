@@ -20,12 +20,21 @@ int main(int argc, char *args[]){
         if(strcmp( args[1], "-v") == 0){
 
             wypisuj=true;
+
+            if(!args[2]){
+                std::cout << "Dodaj argument z nazwą pliku!" << std::endl;
+                return 0;
+            }
             nazwa_pliku = args[2];
 
             if(args[3]){
                 plik_zapis = args[3];
             }
         }else{
+            if(!args[1]){
+                std::cout << "Dodaj argument z nazwą pliku!" << std::endl;
+                return 0;
+            }
             nazwa_pliku = args[1];
             if(args[2]){
                 plik_zapis = args[2];
