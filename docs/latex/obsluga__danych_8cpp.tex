@@ -1,0 +1,150 @@
+\hypertarget{obsluga__danych_8cpp}{}\doxysection{Dokumentacja pliku obsluga\+\_\+danych.\+cpp}
+\label{obsluga__danych_8cpp}\index{obsluga\_danych.cpp@{obsluga\_danych.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include \char`\"{}obsluga\+\_\+danych.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}struktury.\+h\char`\"{}}\newline
+Wykres zależności załączania dla obsluga\+\_\+danych.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{obsluga__danych_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{obsluga__danych_8cpp_a789ca710f92fe4e4cf47f09bd655d266}{wypisz\+Instrukcje}} ()
+\item 
+std\+::pair$<$ int, double $\ast$$\ast$ $>$ \mbox{\hyperlink{obsluga__danych_8cpp_a3e5e8c16678672044b45e5f439985aa7}{wczytaj\+Plik}} (const std\+::string nazwa\+\_\+pliku)
+\item 
+void \mbox{\hyperlink{obsluga__danych_8cpp_ab347b1be4c563bc2117bf53e6072f94b}{wypisz\+Odleglosci}} (std\+::pair$<$ int, double $\ast$$\ast$ $>$ macierz\+Odleglosci)
+\item 
+int \mbox{\hyperlink{obsluga__danych_8cpp_ab924122f4178916d2ed497ddf36c0b01}{ile\+Klientow}} (std\+::pair$<$ int, double $\ast$$\ast$ $>$ macierz\+Odleglosci)
+\item 
+void \mbox{\hyperlink{obsluga__danych_8cpp_a4e037a90c2e6b0deee1b0d04062fe729}{zapisz\+Do\+Pliku}} (const std\+::string nazwa\+\_\+pliku, std\+::pair$<$ double, std\+::vector$<$ int $>$ $>$ trasa)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{obsluga__danych_8cpp_ab924122f4178916d2ed497ddf36c0b01}\label{obsluga__danych_8cpp_ab924122f4178916d2ed497ddf36c0b01}} 
+\index{obsluga\_danych.cpp@{obsluga\_danych.cpp}!ileKlientow@{ileKlientow}}
+\index{ileKlientow@{ileKlientow}!obsluga\_danych.cpp@{obsluga\_danych.cpp}}
+\doxysubsubsection{\texorpdfstring{ileKlientow()}{ileKlientow()}}
+{\footnotesize\ttfamily int ile\+Klientow (\begin{DoxyParamCaption}\item[{std\+::pair$<$ int, double $\ast$$\ast$ $>$}]{macierz\+Odleglosci }\end{DoxyParamCaption})}
+
+Funkcja zwraca liczbe klientow (gdyby numery klientow byly nie po kolei) \begin{DoxyReturn}{Zwraca}
+Zwraca liczbe klientow 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parametry}
+{\em macierz\+Odleglosci} & Struktura zawierajaca wielkosc macierzy oraz macierz z danymi wejsciowymi \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \mbox{\hyperlink{obsluga__danych_8cpp_source_l00161}{161}} pliku \mbox{\hyperlink{obsluga__danych_8cpp_source}{obsluga\+\_\+danych.\+cpp}}.
+
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{obsluga__danych_8cpp_ab924122f4178916d2ed497ddf36c0b01_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{obsluga__danych_8cpp_a3e5e8c16678672044b45e5f439985aa7}\label{obsluga__danych_8cpp_a3e5e8c16678672044b45e5f439985aa7}} 
+\index{obsluga\_danych.cpp@{obsluga\_danych.cpp}!wczytajPlik@{wczytajPlik}}
+\index{wczytajPlik@{wczytajPlik}!obsluga\_danych.cpp@{obsluga\_danych.cpp}}
+\doxysubsubsection{\texorpdfstring{wczytajPlik()}{wczytajPlik()}}
+{\footnotesize\ttfamily std\+::pair$<$ int, double $\ast$$\ast$ $>$ wczytaj\+Plik (\begin{DoxyParamCaption}\item[{const std\+::string}]{nazwa\+\_\+pliku }\end{DoxyParamCaption})}
+
+Funkcja wczytujace dane z pliku wejsciowego i normalizujaca dane wejsciowe do odpowiedniego formatu \begin{DoxyReturn}{Zwraca}
+Zwraca macierz zawierającą odleglosci pomiedzy wszystkimi punktami 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parametry}
+{\em nazwa\+\_\+pliku} & Nazwa pliku tekstowego z którego wczytujemy dane wejściowe \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \mbox{\hyperlink{obsluga__danych_8cpp_source_l00041}{41}} pliku \mbox{\hyperlink{obsluga__danych_8cpp_source}{obsluga\+\_\+danych.\+cpp}}.
+
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{obsluga__danych_8cpp_a3e5e8c16678672044b45e5f439985aa7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{obsluga__danych_8cpp_a789ca710f92fe4e4cf47f09bd655d266}\label{obsluga__danych_8cpp_a789ca710f92fe4e4cf47f09bd655d266}} 
+\index{obsluga\_danych.cpp@{obsluga\_danych.cpp}!wypiszInstrukcje@{wypiszInstrukcje}}
+\index{wypiszInstrukcje@{wypiszInstrukcje}!obsluga\_danych.cpp@{obsluga\_danych.cpp}}
+\doxysubsubsection{\texorpdfstring{wypiszInstrukcje()}{wypiszInstrukcje()}}
+{\footnotesize\ttfamily void wypisz\+Instrukcje (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Funkcja wypisuje instrukcje korzystania z programu 
+
+Definicja w linii \mbox{\hyperlink{obsluga__danych_8cpp_source_l00009}{9}} pliku \mbox{\hyperlink{obsluga__danych_8cpp_source}{obsluga\+\_\+danych.\+cpp}}.
+
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{obsluga__danych_8cpp_a789ca710f92fe4e4cf47f09bd655d266_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{obsluga__danych_8cpp_ab347b1be4c563bc2117bf53e6072f94b}\label{obsluga__danych_8cpp_ab347b1be4c563bc2117bf53e6072f94b}} 
+\index{obsluga\_danych.cpp@{obsluga\_danych.cpp}!wypiszOdleglosci@{wypiszOdleglosci}}
+\index{wypiszOdleglosci@{wypiszOdleglosci}!obsluga\_danych.cpp@{obsluga\_danych.cpp}}
+\doxysubsubsection{\texorpdfstring{wypiszOdleglosci()}{wypiszOdleglosci()}}
+{\footnotesize\ttfamily void wypisz\+Odleglosci (\begin{DoxyParamCaption}\item[{std\+::pair$<$ int, double $\ast$$\ast$ $>$}]{macierz\+Odleglosci }\end{DoxyParamCaption})}
+
+Funkcja wypisuje zawartosc macierzy zawierajacej odleglosci 
+\begin{DoxyParams}{Parametry}
+{\em macierz\+Odleglosci} & Struktura zawierajaca wielkosc macierzy oraz macierz z danymi wejsciowymi \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \mbox{\hyperlink{obsluga__danych_8cpp_source_l00127}{127}} pliku \mbox{\hyperlink{obsluga__danych_8cpp_source}{obsluga\+\_\+danych.\+cpp}}.
+
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{obsluga__danych_8cpp_ab347b1be4c563bc2117bf53e6072f94b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{obsluga__danych_8cpp_a4e037a90c2e6b0deee1b0d04062fe729}\label{obsluga__danych_8cpp_a4e037a90c2e6b0deee1b0d04062fe729}} 
+\index{obsluga\_danych.cpp@{obsluga\_danych.cpp}!zapiszDoPliku@{zapiszDoPliku}}
+\index{zapiszDoPliku@{zapiszDoPliku}!obsluga\_danych.cpp@{obsluga\_danych.cpp}}
+\doxysubsubsection{\texorpdfstring{zapiszDoPliku()}{zapiszDoPliku()}}
+{\footnotesize\ttfamily void zapisz\+Do\+Pliku (\begin{DoxyParamCaption}\item[{const std\+::string}]{nazwa\+\_\+pliku,  }\item[{std\+::pair$<$ double, std\+::vector$<$ int $>$ $>$}]{trasa }\end{DoxyParamCaption})}
+
+Funkcja zapisujaca wyniki programu do pliku 
+\begin{DoxyParams}{Parametry}
+{\em nazwa\+\_\+pliku} & Nazwa pliku wyjściowego \\
+\hline
+{\em trasa} & Struktura zawierajaca dlugosc najkrotszej trasy oraz wektor zawierajacy przebieg tej trasy \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii \mbox{\hyperlink{obsluga__danych_8cpp_source_l00180}{180}} pliku \mbox{\hyperlink{obsluga__danych_8cpp_source}{obsluga\+\_\+danych.\+cpp}}.
+
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{obsluga__danych_8cpp_a4e037a90c2e6b0deee1b0d04062fe729_icgraph}
+\end{center}
+\end{figure}

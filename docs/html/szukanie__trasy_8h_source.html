@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pl">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Kurier: Plik źródłowy szukanie_trasy.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Kurier
+   </div>
+   <div id="projectbrief">Radosław Rajda - projekt na PPK</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Wczytywanie...</div>
+<div class="SRStatus" id="Searching">Szukanie...</div>
+<div class="SRStatus" id="NoMatches">Brak dopasowań</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">szukanie_trasy.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="szukanie__trasy_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef SZUKANIE_TRASY_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define SZUKANIE_TRASY_H</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>std::vector&lt; std::vector&lt;int&gt; &gt; <a class="code hl_function" href="szukanie__trasy_8h.html#ae44c5ec11d1f8dd502fe6f0a2286af39">znajdzDostepneTrasy</a>(std::pair&lt;int,double**&gt; macierzOdleglosci);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">void</span> <a class="code hl_function" href="szukanie__trasy_8h.html#a37862cbe5d5a2240aa06da34bdbc7245">szukajTrasy</a>(<span class="keywordtype">int</span> pozycja, std::pair&lt;int,double**&gt; macierzOdleglosci, std::vector&lt; std::vector&lt;int&gt; &gt; &amp;znalezioneTrasy, std::vector&lt;int&gt; trasa);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keywordtype">bool</span> <a class="code hl_function" href="szukanie__trasy_8h.html#af86065525db369ef1829ac9a7fe2e996">czyMozeJechac</a>(<span class="keywordtype">int</span> klient, <span class="keywordtype">int</span> pozycja, std::pair&lt;int,double**&gt; macierzOdleglosci, std::vector&lt;int&gt; trasa);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keywordtype">void</span> <a class="code hl_function" href="szukanie__trasy_8h.html#a46596001a008ef41a1c412ba1b746a23">wypiszZnalezioneTrasy</a>(std::vector&lt; std::vector&lt;int&gt; &gt; znalezioneTrasy);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keywordtype">void</span> <a class="code hl_function" href="szukanie__trasy_8h.html#a074c0f03f37923184e6be147d12eb888">rysujTrase</a>(std::vector&lt;int&gt; trasa);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>std::pair&lt;double, std::vector&lt;int&gt; &gt; <a class="code hl_function" href="szukanie__trasy_8h.html#a41347fddc76ac758ef7cc9b424f07671">wybierzNajkrotszaTrase</a>(std::vector&lt; std::vector&lt;int&gt; &gt; znalezioneTrasy, std::pair&lt;int,double**&gt; macierzOdleglosci);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keywordtype">double</span> <a class="code hl_function" href="szukanie__trasy_8h.html#a97cf9b636eb7881f36ab50a831a8a323">obliczDlugoscTrasy</a>(std::vector&lt;int&gt; trasa, std::pair&lt;int,double**&gt; macierzOdleglosci);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aszukanie__trasy_8h_html_a074c0f03f37923184e6be147d12eb888"><div class="ttname"><a href="szukanie__trasy_8h.html#a074c0f03f37923184e6be147d12eb888">rysujTrase</a></div><div class="ttdeci">void rysujTrase(std::vector&lt; int &gt; trasa)</div><div class="ttdef"><b>Definition:</b> <a href="szukanie__trasy_8cpp_source.html#l00081">szukanie_trasy.cpp:81</a></div></div>
+<div class="ttc" id="aszukanie__trasy_8h_html_a37862cbe5d5a2240aa06da34bdbc7245"><div class="ttname"><a href="szukanie__trasy_8h.html#a37862cbe5d5a2240aa06da34bdbc7245">szukajTrasy</a></div><div class="ttdeci">void szukajTrasy(int pozycja, std::pair&lt; int, double ** &gt; macierzOdleglosci, std::vector&lt; std::vector&lt; int &gt; &gt; &amp;znalezioneTrasy, std::vector&lt; int &gt; trasa)</div><div class="ttdef"><b>Definition:</b> <a href="szukanie__trasy_8cpp_source.html#l00028">szukanie_trasy.cpp:28</a></div></div>
+<div class="ttc" id="aszukanie__trasy_8h_html_a41347fddc76ac758ef7cc9b424f07671"><div class="ttname"><a href="szukanie__trasy_8h.html#a41347fddc76ac758ef7cc9b424f07671">wybierzNajkrotszaTrase</a></div><div class="ttdeci">std::pair&lt; double, std::vector&lt; int &gt; &gt; wybierzNajkrotszaTrase(std::vector&lt; std::vector&lt; int &gt; &gt; znalezioneTrasy, std::pair&lt; int, double ** &gt; macierzOdleglosci)</div><div class="ttdef"><b>Definition:</b> <a href="szukanie__trasy_8cpp_source.html#l00122">szukanie_trasy.cpp:122</a></div></div>
+<div class="ttc" id="aszukanie__trasy_8h_html_a46596001a008ef41a1c412ba1b746a23"><div class="ttname"><a href="szukanie__trasy_8h.html#a46596001a008ef41a1c412ba1b746a23">wypiszZnalezioneTrasy</a></div><div class="ttdeci">void wypiszZnalezioneTrasy(std::vector&lt; std::vector&lt; int &gt; &gt; znalezioneTrasy)</div><div class="ttdef"><b>Definition:</b> <a href="szukanie__trasy_8cpp_source.html#l00094">szukanie_trasy.cpp:94</a></div></div>
+<div class="ttc" id="aszukanie__trasy_8h_html_a97cf9b636eb7881f36ab50a831a8a323"><div class="ttname"><a href="szukanie__trasy_8h.html#a97cf9b636eb7881f36ab50a831a8a323">obliczDlugoscTrasy</a></div><div class="ttdeci">double obliczDlugoscTrasy(std::vector&lt; int &gt; trasa, std::pair&lt; int, double ** &gt; macierzOdleglosci)</div><div class="ttdef"><b>Definition:</b> <a href="szukanie__trasy_8cpp_source.html#l00107">szukanie_trasy.cpp:107</a></div></div>
+<div class="ttc" id="aszukanie__trasy_8h_html_ae44c5ec11d1f8dd502fe6f0a2286af39"><div class="ttname"><a href="szukanie__trasy_8h.html#ae44c5ec11d1f8dd502fe6f0a2286af39">znajdzDostepneTrasy</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; int &gt; &gt; znajdzDostepneTrasy(std::pair&lt; int, double ** &gt; macierzOdleglosci)</div><div class="ttdef"><b>Definition:</b> <a href="szukanie__trasy_8cpp_source.html#l00068">szukanie_trasy.cpp:68</a></div></div>
+<div class="ttc" id="aszukanie__trasy_8h_html_af86065525db369ef1829ac9a7fe2e996"><div class="ttname"><a href="szukanie__trasy_8h.html#af86065525db369ef1829ac9a7fe2e996">czyMozeJechac</a></div><div class="ttdeci">bool czyMozeJechac(int klient, int pozycja, std::pair&lt; int, double ** &gt; macierzOdleglosci, std::vector&lt; int &gt; trasa)</div><div class="ttdef"><b>Definition:</b> <a href="szukanie__trasy_8cpp_source.html#l00007">szukanie_trasy.cpp:7</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>
