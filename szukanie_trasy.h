@@ -57,4 +57,5 @@ std::pair<double, std::vector<int> > wybierzNajkrotszaTrase(std::vector< std::ve
 */
 double obliczDlugoscTrasy(std::vector<int> trasa, std::pair<int,double**> macierzOdleglosci);
 
+
 #endif

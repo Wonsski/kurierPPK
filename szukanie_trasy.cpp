@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <iomanip>
 
 #include "obsluga_danych.h"
 
@@ -91,7 +92,14 @@ void rysujTrase(std::vector<int> trasa){
 }
 
 void wypiszZnalezioneTrasy(std::vector< std::vector<int> > znalezioneTrasy){
+    
+    std::cout << std::endl;
+    std::cout << std::setfill('-') << std::setw(30) << '-' << std::setfill(' ') << std::endl;
+    std::cout << std::setw(7) << ' ' << "ZNALEZIONE TRASY" << std::endl;
+    std::cout << std::setfill('-') << std::setw(30) << '-' << std::setfill(' ') << std::endl;
+
     for(int i=0; i<znalezioneTrasy.size(); i++){    
+        std::cout << i+1 << '.' << ' ';
         rysujTrase(znalezioneTrasy[i]);
     }
 }

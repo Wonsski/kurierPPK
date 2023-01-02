@@ -27,4 +27,11 @@ void wypiszOdleglosci(std::pair<int,double**> macierzOdleglosci);
  * @param macierzOdleglosci Struktura zawierajaca wielkosc macierzy oraz macierz z danymi wejsciowymi
 */
 int ileKlientow(std::pair<int,double**> macierzOdleglosci);
+
+/**
+ * Funkcja zapisujaca wyniki programu do pliku
+ * @param nazwa_pliku Nazwa pliku wyjściowego
+ * @param trasa Struktura zawierajaca dlugosc najkrotszej trasy oraz wektor zawierajacy przebieg tej trasy
+*/
+void zapiszDoPliku(const std::string nazwa_pliku, std::pair<double, std::vector<int> > trasa);
 #endif

@@ -1,12 +1,41 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <iomanip>
 
 #include "obsluga_danych.h"
 #include "struktury.h"
 
 void wypiszInstrukcje(){
-    std::cout << "Uzycie programu:" << std::endl << "./a.out nazwa_pliku" << std::endl << "./a.out -v nazwa_pliku" << std::endl;
+    std::cout << std::endl;
+    std::cout << std::setfill('-') << std::setw(50) << '-' << std::setfill(' ') << std::endl;
+    std::cout << std::setw(10) << ' ' << "INSTRUKCJA PROGRAMU - KURIER" << std::endl;
+    std::cout << std::setfill('-') << std::setw(50) << '-' << std::setfill(' ') << std::endl;
+
+    std::cout << "Program pozwala na znalezienie najkrótszej zamkniętej trasy dla kuriera" << std::endl;
+    std::cout << "odwiedzającego każdego klienta tylko jeden raz" << std::endl;
+
+    std::cout << std::endl;
+    std::cout << "Program toleruje drogi jednokierunkowe, odpowiednio zapisane w pliku wejściowym" << std::endl;
+
+    std::cout << std::endl << "Dostępne opcje: " << std::endl;
+    std::cout << "  -v    Tryb \"gadatliwy\" wypisujący etapy po kolei wykonywanych operacji" << std::endl;
+
+    std::cout << std::endl << "Argumenty programu: " << std::endl;
+    std::cout << "  nazwa_pliku       [WYMAGANE]   Nazwa pliku wejściowego w którym znajdują się dane dot. odległości od klientów" << std::endl;
+    std::cout << "  plik_wyjsciowy    [OPCJONALNE] Nazwa pliku w którym ma zostać zapisany wynik programu. Domyślnie wyjscie.txt" << std::endl;
+
+    std::cout << std::endl << "UŻYCIE: " << std::endl;
+    std::cout << "  ./a.out [opcje] nazwa_pliku plik_wyjsciowy" << std::endl;
+
+    std::cout << std::endl << "Przykłady: " << std::endl;
+    std::cout << "  ./a.out plik.txt" << std::endl;
+    std::cout << "  ./a.out -v plik.txt" << std::endl;
+    std::cout << "  ./a.out -v plik.txt tuMiZapisz.txt" << std::endl << std::endl;
+
+    std::cout << "Autor programu: Radosław Rajda" << std::endl << std::endl;
+
+    
 }
 
 std::pair<int,double**> wczytajPlik(const std::string nazwa_pliku){
@@ -97,9 +126,32 @@ std::pair<int,double**> wczytajPlik(const std::string nazwa_pliku){
 
 void wypiszOdleglosci(std::pair<int,double**> macierzOdleglosci){
 
-    for(int i=0; i<macierzOdleglosci.first; i++){
-        for(int j=0; j<macierzOdleglosci.first; j++){
-            std::cout << macierzOdleglosci.second[i][j] << " ";
+    int wielkoscMacierzy = macierzOdleglosci.first;
+    double** odleglosci = macierzOdleglosci.second;
+
+    int offset = (macierzOdleglosci.first*7)+4;
+    std::cout << std::endl;
+    std::cout << std::setfill('-') << std::setw(offset) << '-' << std::setfill(' ') << std::endl;
+    std::cout << std::setw((offset*0.5)*0.5) << ' ' << "MACIERZ ODLEGŁOŚCI" << std::endl;
+    std::cout << std::setfill('-') << std::setw(offset) << '-' << std::setfill(' ') << std::endl;
+
+
+
+    for(int i=1; i<=wielkoscMacierzy; i++){
+        if(i==1){
+            std::cout << std::setw(9) << "KL" << std::left << std::setw(5) << i;
+        }else{
+            std::cout << "KL" << std::left << std::setw(5) << i;
+        }
+    }
+
+    std::cout << std::endl;
+
+    for(int i=0; i<wielkoscMacierzy; i++){
+        std::cout << "KL" << std::left << std::setw(5) << i+1;
+
+        for(int j=0; j<wielkoscMacierzy; j++){
+            std::cout << std::setw(7) << std::left << std::fixed << std::setprecision(1) << odleglosci[i][j];
         }
         std::cout << std::endl;
     }
@@ -123,4 +175,32 @@ int ileKlientow(std::pair<int,double**> macierzOdleglosci){
     }
 
     return wielkoscMacierzy-pustyKlient;
+}
+
+void zapiszDoPliku(const std::string nazwa_pliku, std::pair<double, std::vector<int> > trasa){
+    std::ofstream plik(nazwa_pliku);
+
+    if(plik){
+
+        double dlugoscTrasy = trasa.first;
+        std::vector<int> przebiegTrasy = trasa.second;
+
+        plik << "Znaleziona trasa:" << std::endl;
+
+        for(int i=0; i<przebiegTrasy.size(); i++){
+            plik << '(' << przebiegTrasy[i]+1;
+
+            if(i==przebiegTrasy.size()-1){
+                plik << ')';
+            }else{
+                plik << ") -> ";
+            }
+        }
+        plik << std::endl;
+
+        plik << "Łączna długość trasy: " << dlugoscTrasy << std::endl;
+        std::cout << "Wynik zapisano w pliku: " << nazwa_pliku << std::endl;
+    }else{
+        std::cout << "Nie udało się zapisać wyniku do pliku: " << nazwa_pliku << std::endl;
+    }
 }
