@@ -69,7 +69,7 @@ std::pair<int,double**> wczytajPlik(const std::string nazwa_pliku){
                     licznik++;
                 }
             }
-
+            
             if(tekst.length()==licznik) continue; //Same biale znaki w linijce - pomin
 
             //Wyłuskiwanie potrzebnych nam elementów

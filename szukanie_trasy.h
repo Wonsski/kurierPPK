@@ -16,8 +16,9 @@ std::vector< std::vector<int> > znajdzDostepneTrasy(std::pair<int,double**> maci
  * @param macierzOdleglosci Struktura zawierajaca wielkosc macierzy oraz macierz z danymi wejsciowymi
  * @param znalezioneTrasy Wektor przetrzymujacy wyniki rekurencji
  * @param trasa Wektor zawierajacy aktualna trase przejazdu
+ * @param ileKlientow liczba klientow - wynik funkcji ileKlientow()
 */
-void szukajTrasy(int pozycja, std::pair<int,double**> macierzOdleglosci, std::vector< std::vector<int> > &znalezioneTrasy, std::vector<int> trasa);
+void szukajTrasy(int pozycja, std::pair<int,double**> macierzOdleglosci, std::vector< std::vector<int> > &znalezioneTrasy, std::vector<int> trasa, const int ileKlientow, bool odwiedzeni[]);
 
 /**
  * Funkcja sprawdza czy istnieje mozliwosc przejazdu z aktualnej pozycji do nastepnego docelowego klienta

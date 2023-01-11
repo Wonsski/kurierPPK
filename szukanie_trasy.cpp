@@ -4,7 +4,7 @@
 
 #include "obsluga_danych.h"
 
-bool czyMozeJechac(int klient, int pozycja, std::pair<int,double**> macierzOdleglosci, std::vector<int> trasa){
+bool czyMozeJechac(const int &klient, const int &pozycja, const std::pair<int,double**> &macierzOdleglosci, const std::vector<int> &trasa){
 
     int wielkoscMacierzy = macierzOdleglosci.first;
     double** odleglosci = macierzOdleglosci.second;
@@ -14,24 +14,18 @@ bool czyMozeJechac(int klient, int pozycja, std::pair<int,double**> macierzOdleg
     if(odleglosci[trasa[pozycja-1]][klient] == 0){
         return false;
     }
-
-    //Sprawdzenie czy klient nie jest juz odwiedzony
-    for(int i=0; i<wielkoscMacierzy; i++){
-        if(trasa[i]==klient){
-            return false;
-        }
-    }
+    
     return true;
 }
 
 
-void szukajTrasy(int pozycja, std::pair<int,double**> macierzOdleglosci, std::vector< std::vector<int> > &znalezioneTrasy, std::vector<int> trasa){
+void szukajTrasy(int pozycja, std::pair<int,double**> &macierzOdleglosci, std::vector< std::vector<int> > &znalezioneTrasy, std::vector<int> trasa, const int &ileKlientow, bool odwiedzeni[]){
 
     int wielkoscMacierzy = macierzOdleglosci.first;
     double** odleglosci = macierzOdleglosci.second;
 
     //Czy wszystkich odwiedzilismy       liczba odwiedzonych == liczba klientow
-    if(pozycja == ileKlientow(macierzOdleglosci)){
+    if(pozycja == ileKlientow){
 
 
         //Czy ostatni klient ma polaczenie z pierwszym klientem (domkniecie trasy)
@@ -48,16 +42,18 @@ void szukajTrasy(int pozycja, std::pair<int,double**> macierzOdleglosci, std::ve
 
     for(int i=0; i<wielkoscMacierzy; i++){
 
-        if(czyMozeJechac(i,pozycja,macierzOdleglosci,trasa)){
+        if(czyMozeJechac(i,pozycja,macierzOdleglosci,trasa) && !odwiedzeni[i]){
 
             //Dopisanie klienta do trasy
             trasa.push_back(i);
+            odwiedzeni[i] = true;
 
             //Szukanie dalszej trasy
-            szukajTrasy(pozycja+1, macierzOdleglosci, znalezioneTrasy, trasa);
+            szukajTrasy(pozycja+1, macierzOdleglosci, znalezioneTrasy, trasa, ileKlientow, odwiedzeni);
             
             //Usuniecie klienta z trasy i szukanie innych opcji
             trasa.pop_back();
+            odwiedzeni[i] = false;
 
         }
 
@@ -72,8 +68,16 @@ std::vector< std::vector<int> > znajdzDostepneTrasy(std::pair<int,double**> maci
     std::vector<int> trasa;
     trasa.push_back(0); //Dodajemy 0 (Klient nr 1) jako rozpoczynajacego trase
 
+    int wielkoscMacierzy = macierzOdleglosci.first;
+    bool odwiedzeni[wielkoscMacierzy];
+    for(int i=0; i<wielkoscMacierzy; i++){
+        odwiedzeni[i]=false;
+    }
+    odwiedzeni[0] = true;
+
+
     //Szukanie trasy
-    szukajTrasy(1, macierzOdleglosci, znalezioneTrasy, trasa);
+    szukajTrasy(1, macierzOdleglosci, znalezioneTrasy, trasa, ileKlientow(macierzOdleglosci), odwiedzeni);
 
     return znalezioneTrasy;
 }
