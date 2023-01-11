@@ -52,10 +52,10 @@ std::pair<int,double**> wczytajPlik(const std::string nazwa_pliku){
 
         while(std::getline(plik, tekst, ',')){ //Pobieranie kawalkow tekstu oddzielonych przecinkiem
 
-            if(tekst.length()==1) continue;
 
             Trasa trasa; //Struktura dla pojedynczego odcinka
-
+            
+            int licznik=0;
             //Usuwanie zbednych znakow ze stringa, sprawdzenie czy dana trasa jest jednokierunkowa
             for(char &x : tekst){
                 if(x=='>'){
@@ -64,8 +64,13 @@ std::pair<int,double**> wczytajPlik(const std::string nazwa_pliku){
                 if(!isdigit(x) && x!='.'){ //Wyrzucenie wszystkich znakow innych od cyfr, kropka zostaje dla zmiennoprzecinkowych
                     x=' ';
                 }
+
+                if(x==' '){ //Podliczanie ilosci spacji
+                    licznik++;
+                }
             }
 
+            if(tekst.length()==licznik) continue; //Same biale znaki w linijce - pomin
 
             //Wyłuskiwanie potrzebnych nam elementów
             ss << tekst;
@@ -81,8 +86,8 @@ std::pair<int,double**> wczytajPlik(const std::string nazwa_pliku){
                 iloscKlientow = trasa.klientB;
             }
 
-
-            wszystkieOdcinki.push_back(trasa); //Dodanie do zbioru
+            if(trasa.klientA!=0 && trasa.klientB!=0 && trasa.odleglosc!=0.0)
+                wszystkieOdcinki.push_back(trasa); //Dodanie do zbioru
         }
 
         const int wielkoscMacierzy = iloscKlientow;
