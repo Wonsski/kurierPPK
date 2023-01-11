@@ -1,5 +1,6 @@
 <map id="obliczDlugoscTrasy" name="obliczDlugoscTrasy">
-<area shape="rect" id="node1" title=" " alt="" coords="315,5,452,31"/>
+<area shape="rect" id="node1" title=" " alt="" coords="315,31,452,56"/>
 <area shape="rect" id="node2" href="$szukanie__trasy_8cpp.html#a41347fddc76ac758ef7cc9b424f07671" title=" " alt="" coords="104,5,267,31"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a700a0caa5b70a06d1064e576f9f3cf65" title=" " alt="" coords="5,5,56,31"/>
+<area shape="rect" id="node4" href="$szukanie__trasy_8cpp.html#aa59b52e68f17208556a8b917a46297a7" title=" " alt="" coords="106,55,265,80"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#a700a0caa5b70a06d1064e576f9f3cf65" title=" " alt="" coords="5,31,56,56"/>
 </map>

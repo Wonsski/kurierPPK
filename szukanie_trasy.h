@@ -32,8 +32,9 @@ bool czyMozeJechac(int klient, int pozycja, std::pair<int,double**> macierzOdleg
 /**
  * Funkcja wypisujaca wszystkie mozliwe trasy przejazdu
  * @param znalezioneTrasy Wektor wektorow zawierajacych wszystkie mozliwe trasy
+ * @param macierzOdleglosci Struktura zawierajaca wielkosc macierzy oraz macierz z danymi wejsciowymi
 */
-void wypiszZnalezioneTrasy(std::vector< std::vector<int> > znalezioneTrasy);
+void wypiszZnalezioneTrasy(std::vector< std::vector<int> > znalezioneTrasy, std::pair<int,double**> macierzOdleglosci);
 
 /**
  * Funkcja wypisujaca pojedyncza trase w graficzny sposob typu (1) -> (2) -> (3)

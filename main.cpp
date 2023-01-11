@@ -57,7 +57,7 @@ int main(int argc, char *args[]){
             
             if(wypisuj){
                 //Wypisanie znalezionych tras
-                wypiszZnalezioneTrasy(znalezioneTrasy);
+                wypiszZnalezioneTrasy(znalezioneTrasy,macierzOdleglosci);
             }
 
             //Znalezienie najkrotszej trasy
@@ -71,7 +71,7 @@ int main(int argc, char *args[]){
 
             std::cout << "Znaleziona trasa:" << std::endl;
             rysujTrase(najkrotszaTrasa.second);
-            std::cout << std::endl << "Łączna długość trasy: " << najkrotszaTrasa.first << std::endl << std::endl;
+            std::cout << std::endl << std::endl << "Łączna długość trasy: " << najkrotszaTrasa.first << std::endl << std::endl;
 
             //Zapisz wynik
             zapiszDoPliku(plik_zapis,najkrotszaTrasa);

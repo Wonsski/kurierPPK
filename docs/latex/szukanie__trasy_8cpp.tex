@@ -22,9 +22,9 @@ std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{szukanie__trasy_8
 \item 
 void \mbox{\hyperlink{szukanie__trasy_8cpp_a074c0f03f37923184e6be147d12eb888}{rysuj\+Trase}} (std\+::vector$<$ int $>$ trasa)
 \item 
-void \mbox{\hyperlink{szukanie__trasy_8cpp_a46596001a008ef41a1c412ba1b746a23}{wypisz\+Znalezione\+Trasy}} (std\+::vector$<$ std\+::vector$<$ int $>$ $>$ znalezione\+Trasy)
-\item 
 double \mbox{\hyperlink{szukanie__trasy_8cpp_a97cf9b636eb7881f36ab50a831a8a323}{oblicz\+Dlugosc\+Trasy}} (std\+::vector$<$ int $>$ trasa, std\+::pair$<$ int, double $\ast$$\ast$ $>$ macierz\+Odleglosci)
+\item 
+void \mbox{\hyperlink{szukanie__trasy_8cpp_aa59b52e68f17208556a8b917a46297a7}{wypisz\+Znalezione\+Trasy}} (std\+::vector$<$ std\+::vector$<$ int $>$ $>$ znalezione\+Trasy, std\+::pair$<$ int, double $\ast$$\ast$ $>$ macierz\+Odleglosci)
 \item 
 std\+::pair$<$ double, std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{szukanie__trasy_8cpp_a41347fddc76ac758ef7cc9b424f07671}{wybierz\+Najkrotsza\+Trase}} (std\+::vector$<$ std\+::vector$<$ int $>$ $>$ znalezione\+Trasy, std\+::pair$<$ int, double $\ast$$\ast$ $>$ macierz\+Odleglosci)
 \end{DoxyCompactItemize}
@@ -80,9 +80,10 @@ Zwraca dlugosc trasy wejsciowej
 \end{DoxyParams}
 
 
-Definicja w linii \mbox{\hyperlink{szukanie__trasy_8cpp_source_l00107}{107}} pliku \mbox{\hyperlink{szukanie__trasy_8cpp_source}{szukanie\+\_\+trasy.\+cpp}}.
+Definicja w linii \mbox{\hyperlink{szukanie__trasy_8cpp_source_l00093}{93}} pliku \mbox{\hyperlink{szukanie__trasy_8cpp_source}{szukanie\+\_\+trasy.\+cpp}}.
 
-Oto graf wywoływań tej funkcji\+:\nopagebreak
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -104,7 +105,8 @@ Funkcja wypisujaca pojedyncza trase w graficzny sposob typu (1) -\/\texorpdfstri
 
 Definicja w linii \mbox{\hyperlink{szukanie__trasy_8cpp_source_l00081}{81}} pliku \mbox{\hyperlink{szukanie__trasy_8cpp_source}{szukanie\+\_\+trasy.\+cpp}}.
 
-Oto graf wywoływań tej funkcji\+:\nopagebreak
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -183,33 +185,37 @@ Oto graf wywoływań tej funkcji\+:\nopagebreak
 \includegraphics[width=276pt]{szukanie__trasy_8cpp_a41347fddc76ac758ef7cc9b424f07671_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{szukanie__trasy_8cpp_a46596001a008ef41a1c412ba1b746a23}\label{szukanie__trasy_8cpp_a46596001a008ef41a1c412ba1b746a23}} 
+\mbox{\Hypertarget{szukanie__trasy_8cpp_aa59b52e68f17208556a8b917a46297a7}\label{szukanie__trasy_8cpp_aa59b52e68f17208556a8b917a46297a7}} 
 \index{szukanie\_trasy.cpp@{szukanie\_trasy.cpp}!wypiszZnalezioneTrasy@{wypiszZnalezioneTrasy}}
 \index{wypiszZnalezioneTrasy@{wypiszZnalezioneTrasy}!szukanie\_trasy.cpp@{szukanie\_trasy.cpp}}
 \doxysubsubsection{\texorpdfstring{wypiszZnalezioneTrasy()}{wypiszZnalezioneTrasy()}}
-{\footnotesize\ttfamily void wypisz\+Znalezione\+Trasy (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$}]{znalezione\+Trasy }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void wypisz\+Znalezione\+Trasy (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$}]{znalezione\+Trasy,  }\item[{std\+::pair$<$ int, double $\ast$$\ast$ $>$}]{macierz\+Odleglosci }\end{DoxyParamCaption})}
 
 Funkcja wypisujaca wszystkie mozliwe trasy przejazdu 
 \begin{DoxyParams}{Parametry}
 {\em znalezione\+Trasy} & Wektor wektorow zawierajacych wszystkie mozliwe trasy \\
 \hline
+{\em macierz\+Odleglosci} & Struktura zawierajaca wielkosc macierzy oraz macierz z danymi wejsciowymi \\
+\hline
 \end{DoxyParams}
 
 
-Definicja w linii \mbox{\hyperlink{szukanie__trasy_8cpp_source_l00094}{94}} pliku \mbox{\hyperlink{szukanie__trasy_8cpp_source}{szukanie\+\_\+trasy.\+cpp}}.
+Definicja w linii \mbox{\hyperlink{szukanie__trasy_8cpp_source_l00107}{107}} pliku \mbox{\hyperlink{szukanie__trasy_8cpp_source}{szukanie\+\_\+trasy.\+cpp}}.
 
-Oto graf wywołań dla tej funkcji\+:\nopagebreak
+Oto graf wywołań dla tej funkcji\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=297pt]{szukanie__trasy_8cpp_a46596001a008ef41a1c412ba1b746a23_cgraph}
+\includegraphics[width=338pt]{szukanie__trasy_8cpp_aa59b52e68f17208556a8b917a46297a7_cgraph}
 \end{center}
 \end{figure}
-Oto graf wywoływań tej funkcji\+:\nopagebreak
+Oto graf wywoływań tej funkcji\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=273pt]{szukanie__trasy_8cpp_a46596001a008ef41a1c412ba1b746a23_icgraph}
+\includegraphics[width=273pt]{szukanie__trasy_8cpp_aa59b52e68f17208556a8b917a46297a7_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{szukanie__trasy_8cpp_ae44c5ec11d1f8dd502fe6f0a2286af39}\label{szukanie__trasy_8cpp_ae44c5ec11d1f8dd502fe6f0a2286af39}} 

@@ -52,6 +52,8 @@ std::pair<int,double**> wczytajPlik(const std::string nazwa_pliku){
 
         while(std::getline(plik, tekst, ',')){ //Pobieranie kawalkow tekstu oddzielonych przecinkiem
 
+            if(tekst.length()==1) continue;
+
             Trasa trasa; //Struktura dla pojedynczego odcinka
 
             //Usuwanie zbednych znakow ze stringa, sprawdzenie czy dana trasa jest jednokierunkowa

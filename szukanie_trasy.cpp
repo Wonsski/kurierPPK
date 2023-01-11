@@ -88,20 +88,6 @@ void rysujTrase(std::vector<int> trasa){
             std::cout<< ") -> ";
         }
     }
-    std::cout << std::endl;
-}
-
-void wypiszZnalezioneTrasy(std::vector< std::vector<int> > znalezioneTrasy){
-    
-    std::cout << std::endl;
-    std::cout << std::setfill('-') << std::setw(30) << '-' << std::setfill(' ') << std::endl;
-    std::cout << std::setw(7) << ' ' << "ZNALEZIONE TRASY" << std::endl;
-    std::cout << std::setfill('-') << std::setw(30) << '-' << std::setfill(' ') << std::endl;
-
-    for(int i=0; i<znalezioneTrasy.size(); i++){    
-        std::cout << i+1 << '.' << ' ';
-        rysujTrase(znalezioneTrasy[i]);
-    }
 }
 
 double obliczDlugoscTrasy(std::vector<int> trasa, std::pair<int,double**> macierzOdleglosci){
@@ -116,6 +102,20 @@ double obliczDlugoscTrasy(std::vector<int> trasa, std::pair<int,double**> macier
     }
 
     return dlugoscTrasy;
+}
+
+void wypiszZnalezioneTrasy(std::vector< std::vector<int> > znalezioneTrasy, std::pair<int,double**> macierzOdleglosci){
+    
+    std::cout << std::endl;
+    std::cout << std::setfill('-') << std::setw(30) << '-' << std::setfill(' ') << std::endl;
+    std::cout << std::setw(7) << ' ' << "ZNALEZIONE TRASY" << std::endl;
+    std::cout << std::setfill('-') << std::setw(30) << '-' << std::setfill(' ') << std::endl;
+
+    for(int i=0; i<znalezioneTrasy.size(); i++){    
+        std::cout << i+1 << '.' << ' ';
+        rysujTrase(znalezioneTrasy[i]);
+        std::cout << " | Długość trasy: " << obliczDlugoscTrasy(znalezioneTrasy[i],macierzOdleglosci) << std::endl;
+    }
 }
 
 
