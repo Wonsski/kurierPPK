@@ -5,8 +5,9 @@
 
 /**
  * Funkcja wypisuje instrukcje korzystania z programu
+ * @param nazwa_programu Nazwa pliku programu
 */
-void wypiszInstrukcje();
+void wypiszInstrukcje(std::string nazwa_programu);
 
 /**
  * Funkcja wczytujace dane z pliku wejsciowego i normalizujaca dane wejsciowe do odpowiedniego formatu

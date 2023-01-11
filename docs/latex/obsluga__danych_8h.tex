@@ -1,16 +1,14 @@
 \hypertarget{obsluga__danych_8h}{}\doxysection{Dokumentacja pliku obsluga\+\_\+danych.\+h}
 \label{obsluga__danych_8h}\index{obsluga\_danych.h@{obsluga\_danych.h}}
 {\ttfamily \#include $<$vector$>$}\newline
-Wykres zależności załączania dla obsluga\+\_\+danych.\+h\+:
-\nopagebreak
+Wykres zależności załączania dla obsluga\+\_\+danych.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=175pt]{obsluga__danych_8h__incl}
 \end{center}
 \end{figure}
-Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten plik\+:
-\nopagebreak
+Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten plik\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +18,7 @@ Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten 
 \doxysubsection*{Funkcje}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{obsluga__danych_8h_a789ca710f92fe4e4cf47f09bd655d266}{wypisz\+Instrukcje}} ()
+void \mbox{\hyperlink{obsluga__danych_8h_aaa5aa1c1f025b5cd777b7a6714efb71f}{wypisz\+Instrukcje}} (std\+::string nazwa\+\_\+programu)
 \item 
 std\+::pair$<$ int, double $\ast$$\ast$ $>$ \mbox{\hyperlink{obsluga__danych_8h_a3e5e8c16678672044b45e5f439985aa7}{wczytaj\+Plik}} (const std\+::string nazwa\+\_\+pliku)
 \item 
@@ -51,8 +49,7 @@ Zwraca liczbe klientow
 
 Definicja w linii \mbox{\hyperlink{obsluga__danych_8cpp_source_l00161}{161}} pliku \mbox{\hyperlink{obsluga__danych_8cpp_source}{obsluga\+\_\+danych.\+cpp}}.
 
-Oto graf wywoływań tej funkcji\+:
-\nopagebreak
+Oto graf wywoływań tej funkcji\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -77,21 +74,25 @@ Zwraca macierz zawierającą odleglosci pomiedzy wszystkimi punktami
 
 Definicja w linii \mbox{\hyperlink{obsluga__danych_8cpp_source_l00041}{41}} pliku \mbox{\hyperlink{obsluga__danych_8cpp_source}{obsluga\+\_\+danych.\+cpp}}.
 
-Oto graf wywoływań tej funkcji\+:
-\nopagebreak
+Oto graf wywoływań tej funkcji\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=221pt]{obsluga__danych_8h_a3e5e8c16678672044b45e5f439985aa7_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{obsluga__danych_8h_a789ca710f92fe4e4cf47f09bd655d266}\label{obsluga__danych_8h_a789ca710f92fe4e4cf47f09bd655d266}} 
+\mbox{\Hypertarget{obsluga__danych_8h_aaa5aa1c1f025b5cd777b7a6714efb71f}\label{obsluga__danych_8h_aaa5aa1c1f025b5cd777b7a6714efb71f}} 
 \index{obsluga\_danych.h@{obsluga\_danych.h}!wypiszInstrukcje@{wypiszInstrukcje}}
 \index{wypiszInstrukcje@{wypiszInstrukcje}!obsluga\_danych.h@{obsluga\_danych.h}}
 \doxysubsubsection{\texorpdfstring{wypiszInstrukcje()}{wypiszInstrukcje()}}
-{\footnotesize\ttfamily void wypisz\+Instrukcje (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void wypisz\+Instrukcje (\begin{DoxyParamCaption}\item[{std\+::string}]{nazwa\+\_\+programu }\end{DoxyParamCaption})}
 
 Funkcja wypisuje instrukcje korzystania z programu 
+\begin{DoxyParams}{Parametry}
+{\em nazwa\+\_\+programu} & Nazwa pliku programu \\
+\hline
+\end{DoxyParams}
+
 
 Definicja w linii \mbox{\hyperlink{obsluga__danych_8cpp_source_l00009}{9}} pliku \mbox{\hyperlink{obsluga__danych_8cpp_source}{obsluga\+\_\+danych.\+cpp}}.
 
@@ -100,7 +101,7 @@ Oto graf wywoływań tej funkcji\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=244pt]{obsluga__danych_8h_a789ca710f92fe4e4cf47f09bd655d266_icgraph}
+\includegraphics[width=244pt]{obsluga__danych_8h_aaa5aa1c1f025b5cd777b7a6714efb71f_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{obsluga__danych_8h_ab347b1be4c563bc2117bf53e6072f94b}\label{obsluga__danych_8h_ab347b1be4c563bc2117bf53e6072f94b}} 
@@ -118,8 +119,7 @@ Funkcja wypisuje zawartosc macierzy zawierajacej odleglosci
 
 Definicja w linii \mbox{\hyperlink{obsluga__danych_8cpp_source_l00127}{127}} pliku \mbox{\hyperlink{obsluga__danych_8cpp_source}{obsluga\+\_\+danych.\+cpp}}.
 
-Oto graf wywoływań tej funkcji\+:
-\nopagebreak
+Oto graf wywoływań tej funkcji\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -143,8 +143,7 @@ Funkcja zapisujaca wyniki programu do pliku
 
 Definicja w linii \mbox{\hyperlink{obsluga__danych_8cpp_source_l00180}{180}} pliku \mbox{\hyperlink{obsluga__danych_8cpp_source}{obsluga\+\_\+danych.\+cpp}}.
 
-Oto graf wywoływań tej funkcji\+:
-\nopagebreak
+Oto graf wywoływań tej funkcji\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

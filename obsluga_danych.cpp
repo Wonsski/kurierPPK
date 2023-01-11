@@ -6,7 +6,7 @@
 #include "obsluga_danych.h"
 #include "struktury.h"
 
-void wypiszInstrukcje(){
+void wypiszInstrukcje(std::string nazwa_programu){
     std::cout << std::endl;
     std::cout << std::setfill('-') << std::setw(50) << '-' << std::setfill(' ') << std::endl;
     std::cout << std::setw(10) << ' ' << "INSTRUKCJA PROGRAMU - KURIER" << std::endl;
@@ -26,12 +26,12 @@ void wypiszInstrukcje(){
     std::cout << "  plik_wyjsciowy    [OPCJONALNE] Nazwa pliku w którym ma zostać zapisany wynik programu. Domyślnie wyjscie.txt" << std::endl;
 
     std::cout << std::endl << "UŻYCIE: " << std::endl;
-    std::cout << "  ./a.out [opcje] nazwa_pliku plik_wyjsciowy" << std::endl;
+    std::cout << "  " << nazwa_programu << " [opcje] nazwa_pliku plik_wyjsciowy" << std::endl;
 
     std::cout << std::endl << "Przykłady: " << std::endl;
-    std::cout << "  ./a.out plik.txt" << std::endl;
-    std::cout << "  ./a.out -v plik.txt" << std::endl;
-    std::cout << "  ./a.out -v plik.txt tuMiZapisz.txt" << std::endl << std::endl;
+    std::cout << "  " << nazwa_programu << " plik.txt" << std::endl;
+    std::cout << "  " << nazwa_programu << " -v plik.txt" << std::endl;
+    std::cout << "  " << nazwa_programu << " -v plik.txt tuMiZapisz.txt" << std::endl << std::endl;
 
     std::cout << "Autor programu: Radosław Rajda" << std::endl << std::endl;
 

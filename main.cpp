@@ -9,7 +9,7 @@ int main(int argc, char *args[]){
     
     //Dla programu uruchomionego bez argumentow
     if(argc==1){
-        wypiszInstrukcje();
+        wypiszInstrukcje(args[0]);
     }else{ //Dla przynajmniej jednego argumentu
         
         std::string nazwa_pliku;
