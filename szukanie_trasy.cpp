@@ -125,11 +125,12 @@ std::pair<double, std::vector<int> > wybierzNajkrotszaTrase(std::vector< std::ve
     double dlugoscNajkrotszejTrasy = obliczDlugoscTrasy(znalezioneTrasy[0],macierzOdleglosci);
 
     //Dla pozostalych tras
-    for(int i=1; i<znalezioneTrasy.size(); i++){
+    for(int i=0; i<znalezioneTrasy.size(); i++){
         double dlugoscTrasy = obliczDlugoscTrasy(znalezioneTrasy[i],macierzOdleglosci);
 
         if(dlugoscTrasy<dlugoscNajkrotszejTrasy){
             indeksNajkrotszejTrasy = i;
+            dlugoscNajkrotszejTrasy = dlugoscTrasy;
         }
     }
 
