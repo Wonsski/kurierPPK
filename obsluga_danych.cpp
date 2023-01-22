@@ -39,7 +39,7 @@ void wypiszInstrukcje(std::string nazwa_programu){
     
 }
 
-std::pair<int,double**> wczytajPlik(const std::string nazwa_pliku){
+std::pair<int,double**> wczytajPlik(const std::string &nazwa_pliku){
     
     std::ifstream plik(nazwa_pliku);
 
@@ -132,7 +132,7 @@ std::pair<int,double**> wczytajPlik(const std::string nazwa_pliku){
 
 }
 
-void wypiszOdleglosci(std::pair<int,double**> macierzOdleglosci){
+void wypiszOdleglosci(std::pair<int,double**> &macierzOdleglosci){
 
     int wielkoscMacierzy = macierzOdleglosci.first;
     double** odleglosci = macierzOdleglosci.second;
@@ -166,7 +166,7 @@ void wypiszOdleglosci(std::pair<int,double**> macierzOdleglosci){
 
 }
 
-int ileKlientow(std::pair<int,double**> macierzOdleglosci){
+int ileKlientow(std::pair<int,double**> &macierzOdleglosci){
     int wielkoscMacierzy = macierzOdleglosci.first;
     double** odleglosci = macierzOdleglosci.second;
 
@@ -185,20 +185,17 @@ int ileKlientow(std::pair<int,double**> macierzOdleglosci){
     return wielkoscMacierzy-pustyKlient;
 }
 
-void zapiszDoPliku(const std::string nazwa_pliku, std::pair<double, std::vector<int> > trasa){
+void zapiszDoPliku(const std::string &nazwa_pliku, std::vector<int> &trasa, double &dlugosc){
     std::ofstream plik(nazwa_pliku);
 
     if(plik){
 
-        double dlugoscTrasy = trasa.first;
-        std::vector<int> przebiegTrasy = trasa.second;
-
         plik << "Znaleziona trasa:" << std::endl;
 
-        for(int i=0; i<przebiegTrasy.size(); i++){
-            plik << '(' << przebiegTrasy[i]+1;
+        for(int i=0; i<trasa.size(); i++){
+            plik << '(' << trasa[i]+1;
 
-            if(i==przebiegTrasy.size()-1){
+            if(i==trasa.size()-1){
                 plik << ')';
             }else{
                 plik << ") -> ";
@@ -206,7 +203,7 @@ void zapiszDoPliku(const std::string nazwa_pliku, std::pair<double, std::vector<
         }
         plik << std::endl;
 
-        plik << "Łączna długość trasy: " << dlugoscTrasy << std::endl;
+        plik << "Łączna długość trasy: " << dlugosc << std::endl;
         std::cout << "Wynik zapisano w pliku: " << nazwa_pliku << std::endl;
     }else{
         std::cout << "Nie udało się zapisać wyniku do pliku: " << nazwa_pliku << std::endl;

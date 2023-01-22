@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <iomanip>
+#include <cstring>
 
 #include "obsluga_danych.h"
 #include "szukanie_trasy.h"
@@ -77,7 +78,9 @@ int main(int argc, char *args[]){
             }
 
             //Znalezienie najkrotszej trasy
-            std::pair<double, std::vector<int> > najkrotszaTrasa = wybierzNajkrotszaTrase(znalezioneTrasy,macierzOdleglosci);
+            std::vector<int> najkrotszaTrasa;
+            double dlugoscNajkrotszejTrasy;
+            wybierzNajkrotszaTrase(0, znalezioneTrasy.size()-1, dlugoscNajkrotszejTrasy, najkrotszaTrasa, znalezioneTrasy,macierzOdleglosci);
 
             //Wypisz najkrotsza trase
             std::cout << std::endl;
@@ -86,11 +89,11 @@ int main(int argc, char *args[]){
             std::cout << std::setfill('-') << std::setw(30) << '-' << std::setfill(' ') << std::endl;
 
             std::cout << "Znaleziona trasa:" << std::endl;
-            rysujTrase(najkrotszaTrasa.second);
-            std::cout << std::endl << std::endl << "Łączna długość trasy: " << najkrotszaTrasa.first << std::endl << std::endl;
+            rysujTrase(najkrotszaTrasa);
+            std::cout << std::endl << std::endl << "Łączna długość trasy: " << dlugoscNajkrotszejTrasy << std::endl << std::endl;
 
             //Zapisz wynik
-            zapiszDoPliku(plik_zapis,najkrotszaTrasa);
+            zapiszDoPliku(plik_zapis,najkrotszaTrasa,dlugoscNajkrotszejTrasy);
 
         }else{
             //Brak tras

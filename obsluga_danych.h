@@ -14,25 +14,26 @@ void wypiszInstrukcje(std::string nazwa_programu);
  * @return Zwraca macierz zawierającą odleglosci pomiedzy wszystkimi punktami
  * @param nazwa_pliku Nazwa pliku tekstowego z którego wczytujemy dane wejściowe
 */
-std::pair<int,double**> wczytajPlik(const std::string nazwa_pliku);
+std::pair<int,double**> wczytajPlik(const std::string &nazwa_pliku);
 
 /**
  * Funkcja wypisuje zawartosc macierzy zawierajacej odleglosci
  * @param macierzOdleglosci Struktura zawierajaca wielkosc macierzy oraz macierz z danymi wejsciowymi
 */
-void wypiszOdleglosci(std::pair<int,double**> macierzOdleglosci);
+void wypiszOdleglosci(std::pair<int,double**> &macierzOdleglosci);
 
 /**
  * Funkcja zwraca liczbe klientow (gdyby numery klientow byly nie po kolei)
  * @return Zwraca liczbe klientow
  * @param macierzOdleglosci Struktura zawierajaca wielkosc macierzy oraz macierz z danymi wejsciowymi
 */
-int ileKlientow(std::pair<int,double**> macierzOdleglosci);
+int ileKlientow(std::pair<int,double**> &macierzOdleglosci);
 
 /**
  * Funkcja zapisujaca wyniki programu do pliku
  * @param nazwa_pliku Nazwa pliku wyjściowego
- * @param trasa Struktura zawierajaca dlugosc najkrotszej trasy oraz wektor zawierajacy przebieg tej trasy
+ * @param trasa Wektor zawierajacy najkrotsza trase
+ * @param dlugosc Dlugosc najkrotszej trasy
 */
-void zapiszDoPliku(const std::string nazwa_pliku, std::pair<double, std::vector<int> > trasa);
+void zapiszDoPliku(const std::string &nazwa_pliku, std::vector<int> &trasa, double &dlugosc);
 #endif
