@@ -1,27 +1,30 @@
 var indexSectionsWithContent =
 {
-  0: "cijkmorstwz",
+  0: "cfgijkmnoprstwz",
   1: "t",
-  2: "mos",
-  3: "cimorswz",
-  4: "jko"
+  2: "g",
+  3: "gmos",
+  4: "cimorswz",
+  5: "fjknopz"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "files",
-  3: "functions",
-  4: "variables"
+  2: "namespaces",
+  3: "files",
+  4: "functions",
+  5: "variables"
 };
 
 var indexSectionLabels =
 {
   0: "Wszystko",
   1: "Klasy",
-  2: "Pliki",
-  3: "Funkcje",
-  4: "Zmienne"
+  2: "Przestrzenie nazw",
+  3: "Pliki",
+  4: "Funkcje",
+  5: "Zmienne"
 };
 

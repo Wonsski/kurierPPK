@@ -1,6 +1,6 @@
 <map id="znajdzDostepneTrasy" name="znajdzDostepneTrasy">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,155,56"/>
-<area shape="rect" id="node2" href="$szukanie__trasy_8cpp.html#a37862cbe5d5a2240aa06da34bdbc7245" title=" " alt="" coords="203,31,296,56"/>
-<area shape="rect" id="node3" href="$szukanie__trasy_8cpp.html#af86065525db369ef1829ac9a7fe2e996" title=" " alt="" coords="344,5,461,31"/>
-<area shape="rect" id="node4" href="$obsluga__danych_8cpp.html#ab924122f4178916d2ed497ddf36c0b01" title=" " alt="" coords="360,55,445,80"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,29,155,55"/>
+<area shape="rect" id="node2" href="$obsluga__danych_8cpp.html#ab924122f4178916d2ed497ddf36c0b01" title=" " alt="" coords="360,5,445,31"/>
+<area shape="rect" id="node3" href="$szukanie__trasy_8cpp.html#a0f6fe9ce613420a479843cd0df9b1fdc" title=" " alt="" coords="203,67,296,92"/>
+<area shape="rect" id="node4" href="$szukanie__trasy_8cpp.html#a180ae3ff30bf8e7a1d0df784ffd7f7cf" title=" " alt="" coords="344,67,461,92"/>
 </map>

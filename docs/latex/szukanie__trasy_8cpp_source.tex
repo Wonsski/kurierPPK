@@ -7,7 +7,7 @@
 \DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00004}00004\ }
 \DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{obsluga__danych_8h}{obsluga\_danych.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00006}00006\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00007}\mbox{\hyperlink{szukanie__trasy_8cpp_af86065525db369ef1829ac9a7fe2e996}{00007}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{szukanie__trasy_8cpp_af86065525db369ef1829ac9a7fe2e996}{czyMozeJechac}}(\textcolor{keywordtype}{int}\ klient,\ \textcolor{keywordtype}{int}\ pozycja,\ std::pair<int,double**>\ macierzOdleglosci,\ std::vector<int>\ trasa)\{}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00007}\mbox{\hyperlink{szukanie__trasy_8cpp_a180ae3ff30bf8e7a1d0df784ffd7f7cf}{00007}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{szukanie__trasy_8cpp_a180ae3ff30bf8e7a1d0df784ffd7f7cf}{czyMozeJechac}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&klient,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&pozycja,\ \textcolor{keyword}{const}\ std::pair<int,double**>\ \&macierzOdleglosci,\ \textcolor{keyword}{const}\ std::vector<int>\ \&trasa)\{}
 \DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00008}00008\ }
 \DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keywordtype}{int}\ wielkoscMacierzy\ =\ macierzOdleglosci.first;}
 \DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{keywordtype}{double}**\ odleglosci\ =\ macierzOdleglosci.second;}
@@ -18,132 +18,145 @@
 \DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
 \DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00016}00016\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00017}00017\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{comment}{//Sprawdzenie\ czy\ klient\ nie\ jest\ juz\ odwiedzony}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<wielkoscMacierzy;\ i++)\{}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(trasa[i]==klient)\{}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00023}00023\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00022}\mbox{\hyperlink{szukanie__trasy_8cpp_a0f6fe9ce613420a479843cd0df9b1fdc}{00022}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{szukanie__trasy_8cpp_a0f6fe9ce613420a479843cd0df9b1fdc}{szukajTrasy}}(\textcolor{keywordtype}{int}\ pozycja,\ std::pair<int,double**>\ \&macierzOdleglosci,\ std::vector<\ std::vector<int>\ >\ \&znalezioneTrasy,\ std::vector<int>\ trasa,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \&\mbox{\hyperlink{obsluga__danych_8cpp_ab924122f4178916d2ed497ddf36c0b01}{ileKlientow}},\ \textcolor{keywordtype}{bool}\ odwiedzeni[])\{}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{int}\ wielkoscMacierzy\ =\ macierzOdleglosci.first;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{double}**\ odleglosci\ =\ macierzOdleglosci.second;}
 \DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00026}00026\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00027}00027\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00028}\mbox{\hyperlink{szukanie__trasy_8cpp_a37862cbe5d5a2240aa06da34bdbc7245}{00028}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{szukanie__trasy_8cpp_a37862cbe5d5a2240aa06da34bdbc7245}{szukajTrasy}}(\textcolor{keywordtype}{int}\ pozycja,\ std::pair<int,double**>\ macierzOdleglosci,\ std::vector<\ std::vector<int>\ >\ \&znalezioneTrasy,\ std::vector<int>\ trasa)\{}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{comment}{//Czy\ wszystkich\ odwiedzilismy\ \ \ \ \ \ \ liczba\ odwiedzonych\ ==\ liczba\ klientow}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{if}(pozycja\ ==\ \mbox{\hyperlink{obsluga__danych_8cpp_ab924122f4178916d2ed497ddf36c0b01}{ileKlientow}})\{}
 \DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{int}\ wielkoscMacierzy\ =\ macierzOdleglosci.first;}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{double}**\ odleglosci\ =\ macierzOdleglosci.second;}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00032}00032\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//Czy\ wszystkich\ odwiedzilismy\ \ \ \ \ \ \ liczba\ odwiedzonych\ ==\ liczba\ klientow}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{if}(pozycja\ ==\ \mbox{\hyperlink{obsluga__danych_8cpp_ab924122f4178916d2ed497ddf36c0b01}{ileKlientow}}(macierzOdleglosci))\{}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00035}00035\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00036}00036\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Czy\ ostatni\ klient\ ma\ polaczenie\ z\ pierwszym\ klientem\ (domkniecie\ trasy)}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(odleglosci[trasa[trasa.size()-\/1]][trasa[0]]\ !=\ 0)\{}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00039}00039\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ trasa.push\_back(trasa[0]);\ \textcolor{comment}{//Dopisanie\ pierwszego\ klienta\ na\ koniec\ trasy}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ znalezioneTrasy.push\_back(trasa);\ \textcolor{comment}{//Dodanie\ trasy\ do\ listy}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Czy\ ostatni\ klient\ ma\ polaczenie\ z\ pierwszym\ klientem\ (domkniecie\ trasy)}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(odleglosci[trasa[trasa.size()-\/1]][trasa[0]]\ !=\ 0)\{}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ trasa.push\_back(trasa[0]);\ \textcolor{comment}{//Dopisanie\ pierwszego\ klienta\ na\ koniec\ trasy}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ znalezioneTrasy.push\_back(trasa);\ \textcolor{comment}{//Dodanie\ trasy\ do\ listy}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<wielkoscMacierzy;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ Cel\ |\ Akt.\ pozycja}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{szukanie__trasy_8cpp_a180ae3ff30bf8e7a1d0df784ffd7f7cf}{czyMozeJechac}}(i,pozycja,macierzOdleglosci,trasa)\ \&\&\ !odwiedzeni[i])\{}
 \DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<wielkoscMacierzy;\ i++)\{}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{szukanie__trasy_8cpp_af86065525db369ef1829ac9a7fe2e996}{czyMozeJechac}}(i,pozycja,macierzOdleglosci,trasa))\{}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00052}00052\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Dopisanie\ klienta\ do\ trasy}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ trasa.push\_back(i);}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00055}00055\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Szukanie\ dalszej\ trasy}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{szukanie__trasy_8cpp_a37862cbe5d5a2240aa06da34bdbc7245}{szukajTrasy}}(pozycja+1,\ macierzOdleglosci,\ znalezioneTrasy,\ trasa);}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Usuniecie\ klienta\ z\ trasy\ i\ szukanie\ innych\ opcji}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ trasa.pop\_back();}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00061}00061\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00063}00063\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00064}00064\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00065}00065\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00066}00066\ \}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00067}00067\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00068}\mbox{\hyperlink{szukanie__trasy_8cpp_ae44c5ec11d1f8dd502fe6f0a2286af39}{00068}}\ std::vector<\ std::vector<int>\ >\ \mbox{\hyperlink{szukanie__trasy_8cpp_ae44c5ec11d1f8dd502fe6f0a2286af39}{znajdzDostepneTrasy}}(std::pair<int,double**>\ macierzOdleglosci)\{}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00069}00069\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00070}00070\ \ \ \ \ std::vector<\ std::vector<int>\ >\ znalezioneTrasy;}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00071}00071\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00072}00072\ \ \ \ \ std::vector<int>\ trasa;}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00073}00073\ \ \ \ \ trasa.push\_back(0);\ \textcolor{comment}{//Dodajemy\ 0\ (Klient\ nr\ 1)\ jako\ rozpoczynajacego\ trase}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00074}00074\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00075}00075\ \ \ \ \ \textcolor{comment}{//Szukanie\ trasy}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00076}00076\ \ \ \ \ \mbox{\hyperlink{szukanie__trasy_8cpp_a37862cbe5d5a2240aa06da34bdbc7245}{szukajTrasy}}(1,\ macierzOdleglosci,\ znalezioneTrasy,\ trasa);}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Dopisanie\ klienta\ do\ trasy}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ trasa.push\_back(i);}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ odwiedzeni[i]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Szukanie\ dalszej\ trasy}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{szukanie__trasy_8cpp_a0f6fe9ce613420a479843cd0df9b1fdc}{szukajTrasy}}(pozycja+1,\ macierzOdleglosci,\ znalezioneTrasy,\ trasa,\ \mbox{\hyperlink{obsluga__danych_8cpp_ab924122f4178916d2ed497ddf36c0b01}{ileKlientow}},\ odwiedzeni);}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Usuniecie\ klienta\ z\ trasy\ i\ szukanie\ innych\ opcji}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ trasa.pop\_back();}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ odwiedzeni[i]\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00063}00063\ \}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00065}\mbox{\hyperlink{szukanie__trasy_8cpp_af890a3cf3988d2e1a57959320260ae09}{00065}}\ std::vector<\ std::vector<int>\ >\ \mbox{\hyperlink{szukanie__trasy_8cpp_af890a3cf3988d2e1a57959320260ae09}{znajdzDostepneTrasy}}(\textcolor{keywordtype}{int}\ start,std::pair<int,double**>\ macierzOdleglosci)\{}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00066}00066\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00067}00067\ \ \ \ \ std::vector<\ std::vector<int>\ >\ znalezioneTrasy;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00069}00069\ \ \ \ \ std::vector<int>\ trasa;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{if}(start<1)\{}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl\ <<\ \textcolor{stringliteral}{"{}Nieodpowiedni\ identyfikator\ klienta"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ znalezioneTrasy;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00076}00076\ \ \ \ \ trasa.push\_back(start-\/1);\ \textcolor{comment}{//Dodajemy\ klienta\ rozpoczynajacego\ trase}}
 \DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00077}00077\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{keywordflow}{return}\ znalezioneTrasy;}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00079}00079\ \}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00080}00080\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00081}\mbox{\hyperlink{szukanie__trasy_8cpp_a074c0f03f37923184e6be147d12eb888}{00081}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{szukanie__trasy_8cpp_a074c0f03f37923184e6be147d12eb888}{rysujTrase}}(std::vector<int>\ trasa)\{}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<trasa.size();\ i++)\{}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{charliteral}{'('}\ <<\ trasa[i]+1;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{keywordtype}{int}\ wielkoscMacierzy\ =\ macierzOdleglosci.first;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordtype}{bool}\ odwiedzeni[wielkoscMacierzy];}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<wielkoscMacierzy;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ odwiedzeni[i]=\textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00083}00083\ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00084}00084\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i==trasa.size()-\/1)\{}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout<<\ \textcolor{charliteral}{')'};}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout<<\ \textcolor{stringliteral}{"{})\ -\/>\ "{}};}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00090}00090\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00091}00091\ \}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00092}00092\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00093}\mbox{\hyperlink{szukanie__trasy_8cpp_a97cf9b636eb7881f36ab50a831a8a323}{00093}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{szukanie__trasy_8cpp_a97cf9b636eb7881f36ab50a831a8a323}{obliczDlugoscTrasy}}(std::vector<int>\ trasa,\ std::pair<int,double**>\ macierzOdleglosci)\{}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00094}00094\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keywordtype}{int}\ wielkoscMacierzy\ =\ macierzOdleglosci.first;}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00096}00096\ \ \ \ \ \textcolor{keywordtype}{double}**\ odleglosci\ =\ macierzOdleglosci.second;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00085}00085\ \ \ \ \ odwiedzeni[start-\/1]\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00088}00088\ \ \ \ \ \textcolor{comment}{//Szukanie\ trasy}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00089}00089\ \ \ \ \ \mbox{\hyperlink{szukanie__trasy_8cpp_a0f6fe9ce613420a479843cd0df9b1fdc}{szukajTrasy}}(1,\ macierzOdleglosci,\ znalezioneTrasy,\ trasa,\ \mbox{\hyperlink{obsluga__danych_8cpp_ab924122f4178916d2ed497ddf36c0b01}{ileKlientow}}(macierzOdleglosci),\ odwiedzeni);}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{return}\ znalezioneTrasy;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00092}00092\ \}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00094}\mbox{\hyperlink{szukanie__trasy_8cpp_a074c0f03f37923184e6be147d12eb888}{00094}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{szukanie__trasy_8cpp_a074c0f03f37923184e6be147d12eb888}{rysujTrase}}(std::vector<int>\ trasa)\{}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<trasa.size();\ i++)\{}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{charliteral}{'('}\ <<\ trasa[i]+1;}
 \DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00097}00097\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00098}00098\ \ \ \ \ \textcolor{keywordtype}{double}\ dlugoscTrasy\ =\ 0;}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00099}00099\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00100}00100\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=1;\ i<trasa.size();\ i++)\{}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ dlugoscTrasy\ +=\ odleglosci[trasa[i-\/1]][trasa[i]];}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00102}00102\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00103}00103\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00104}00104\ \ \ \ \ \textcolor{keywordflow}{return}\ dlugoscTrasy;}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00105}00105\ \}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00106}00106\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00107}\mbox{\hyperlink{szukanie__trasy_8cpp_aa59b52e68f17208556a8b917a46297a7}{00107}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{szukanie__trasy_8cpp_aa59b52e68f17208556a8b917a46297a7}{wypiszZnalezioneTrasy}}(std::vector<\ std::vector<int>\ >\ znalezioneTrasy,\ std::pair<int,double**>\ macierzOdleglosci)\{}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00108}00108\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00109}00109\ \ \ \ \ std::cout\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00110}00110\ \ \ \ \ std::cout\ <<\ std::setfill(\textcolor{charliteral}{'-\/'})\ <<\ std::setw(30)\ <<\ \textcolor{charliteral}{'-\/'}\ <<\ std::setfill(\textcolor{charliteral}{'\ '})\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00111}00111\ \ \ \ \ std::cout\ <<\ std::setw(7)\ <<\ \textcolor{charliteral}{'\ '}\ <<\ \textcolor{stringliteral}{"{}ZNALEZIONE\ TRASY"{}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00112}00112\ \ \ \ \ std::cout\ <<\ std::setfill(\textcolor{charliteral}{'-\/'})\ <<\ std::setw(30)\ <<\ \textcolor{charliteral}{'-\/'}\ <<\ std::setfill(\textcolor{charliteral}{'\ '})\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00113}00113\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<znalezioneTrasy.size();\ i++)\{\ \ \ \ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00115}00115\ \ \ \ \ \ \ \ \ std::cout\ <<\ i+1\ <<\ \textcolor{charliteral}{'.'}\ <<\ \textcolor{charliteral}{'\ '};}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{szukanie__trasy_8cpp_a074c0f03f37923184e6be147d12eb888}{rysujTrase}}(znalezioneTrasy[i]);}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00117}00117\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ |\ Długość\ trasy:\ "{}}\ <<\ \mbox{\hyperlink{szukanie__trasy_8cpp_a97cf9b636eb7881f36ab50a831a8a323}{obliczDlugoscTrasy}}(znalezioneTrasy[i],macierzOdleglosci)\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00118}00118\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00119}00119\ \}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00120}00120\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00121}00121\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00122}\mbox{\hyperlink{szukanie__trasy_8cpp_a41347fddc76ac758ef7cc9b424f07671}{00122}}\ std::pair<double,\ std::vector<int>\ >\ \mbox{\hyperlink{szukanie__trasy_8cpp_a41347fddc76ac758ef7cc9b424f07671}{wybierzNajkrotszaTrase}}(std::vector<\ std::vector<int>\ >\ znalezioneTrasy,\ std::pair<int,double**>\ macierzOdleglosci)\{}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00123}00123\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00124}00124\ \ \ \ \ \textcolor{keywordtype}{int}\ indeksNajkrotszejTrasy\ =\ 0;\ \textcolor{comment}{//Domyslne\ pierwsza\ trasa\ najkrotsza}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00125}00125\ \ \ \ \ \textcolor{keywordtype}{double}\ dlugoscNajkrotszejTrasy\ =\ \mbox{\hyperlink{szukanie__trasy_8cpp_a97cf9b636eb7881f36ab50a831a8a323}{obliczDlugoscTrasy}}(znalezioneTrasy[0],macierzOdleglosci);}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i==trasa.size()-\/1)\{}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout<<\ \textcolor{charliteral}{')'};}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout<<\ \textcolor{stringliteral}{"{})\ -\/>\ "{}};}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00103}00103\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00104}00104\ \}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00106}\mbox{\hyperlink{szukanie__trasy_8cpp_a97cf9b636eb7881f36ab50a831a8a323}{00106}}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{szukanie__trasy_8cpp_a97cf9b636eb7881f36ab50a831a8a323}{obliczDlugoscTrasy}}(std::vector<int>\ trasa,\ std::pair<int,double**>\ macierzOdleglosci)\{}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00107}00107\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00108}00108\ \ \ \ \ \textcolor{keywordtype}{int}\ wielkoscMacierzy\ =\ macierzOdleglosci.first;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{keywordtype}{double}**\ odleglosci\ =\ macierzOdleglosci.second;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordtype}{double}\ dlugoscTrasy\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00113}00113\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=1;\ i<trasa.size();\ i++)\{}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ dlugoscTrasy\ +=\ odleglosci[trasa[i-\/1]][trasa[i]];}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00115}00115\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00117}00117\ \ \ \ \ \textcolor{keywordflow}{return}\ dlugoscTrasy;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00118}00118\ \}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00120}\mbox{\hyperlink{szukanie__trasy_8cpp_aa59b52e68f17208556a8b917a46297a7}{00120}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{szukanie__trasy_8cpp_aa59b52e68f17208556a8b917a46297a7}{wypiszZnalezioneTrasy}}(std::vector<\ std::vector<int>\ >\ znalezioneTrasy,\ std::pair<int,double**>\ macierzOdleglosci)\{}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00121}00121\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00122}00122\ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00123}00123\ \ \ \ \ std::cout\ <<\ std::setfill(\textcolor{charliteral}{'-\/'})\ <<\ std::setw(30)\ <<\ \textcolor{charliteral}{'-\/'}\ <<\ std::setfill(\textcolor{charliteral}{'\ '})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00124}00124\ \ \ \ \ std::cout\ <<\ std::setw(7)\ <<\ \textcolor{charliteral}{'\ '}\ <<\ \textcolor{stringliteral}{"{}ZNALEZIONE\ TRASY"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00125}00125\ \ \ \ \ std::cout\ <<\ std::setfill(\textcolor{charliteral}{'-\/'})\ <<\ std::setw(30)\ <<\ \textcolor{charliteral}{'-\/'}\ <<\ std::setfill(\textcolor{charliteral}{'\ '})\ <<\ std::endl;}
 \DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00126}00126\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00127}00127\ \ \ \ \ \textcolor{comment}{//Dla\ pozostalych\ tras}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00128}00128\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<znalezioneTrasy.size();\ i++)\{}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dlugoscTrasy\ =\ \mbox{\hyperlink{szukanie__trasy_8cpp_a97cf9b636eb7881f36ab50a831a8a323}{obliczDlugoscTrasy}}(znalezioneTrasy[i],macierzOdleglosci);}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00130}00130\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(dlugoscTrasy<dlugoscNajkrotszejTrasy)\{}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ indeksNajkrotszejTrasy\ =\ i;}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ dlugoscNajkrotszejTrasy\ =\ dlugoscTrasy;}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00135}00135\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00127}00127\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<znalezioneTrasy.size();\ i++)\{\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00128}00128\ \ \ \ \ \ \ \ \ std::cout\ <<\ i+1\ <<\ \textcolor{charliteral}{'.'}\ <<\ \textcolor{charliteral}{'\ '};}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00129}00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{szukanie__trasy_8cpp_a074c0f03f37923184e6be147d12eb888}{rysujTrase}}(znalezioneTrasy[i]);}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00130}00130\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\ |\ Długość\ trasy:\ "{}}\ <<\ \mbox{\hyperlink{szukanie__trasy_8cpp_a97cf9b636eb7881f36ab50a831a8a323}{obliczDlugoscTrasy}}(znalezioneTrasy[i],macierzOdleglosci)\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00131}00131\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00132}00132\ \}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00135}\mbox{\hyperlink{szukanie__trasy_8cpp_a41347fddc76ac758ef7cc9b424f07671}{00135}}\ std::pair<double,\ std::vector<int>\ >\ \mbox{\hyperlink{szukanie__trasy_8cpp_a41347fddc76ac758ef7cc9b424f07671}{wybierzNajkrotszaTrase}}(std::vector<\ std::vector<int>\ >\ znalezioneTrasy,\ std::pair<int,double**>\ macierzOdleglosci)\{}
 \DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00136}00136\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00137}00137\ \ \ \ \ \textcolor{comment}{//Spakowanie\ wynikow}}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00138}00138\ \ \ \ \ std::pair<double,\ std::vector<int>\ >\ wynik;}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00139}00139\ \ \ \ \ wynik.first\ =\ dlugoscNajkrotszejTrasy;}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00140}00140\ \ \ \ \ wynik.second\ =\ znalezioneTrasy[indeksNajkrotszejTrasy];}
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00141}00141\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00142}00142\ \ \ \ \ \textcolor{keywordflow}{return}\ wynik;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00137}00137\ \ \ \ \ \textcolor{keywordtype}{int}\ indeksNajkrotszejTrasy\ =\ 0;\ \textcolor{comment}{//Domyslne\ pierwsza\ trasa\ najkrotsza}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00138}00138\ \ \ \ \ \textcolor{keywordtype}{double}\ dlugoscNajkrotszejTrasy\ =\ \mbox{\hyperlink{szukanie__trasy_8cpp_a97cf9b636eb7881f36ab50a831a8a323}{obliczDlugoscTrasy}}(znalezioneTrasy[0],macierzOdleglosci);}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00140}00140\ \ \ \ \ \textcolor{comment}{//Dla\ pozostalych\ tras}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00141}00141\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<znalezioneTrasy.size();\ i++)\{}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ dlugoscTrasy\ =\ \mbox{\hyperlink{szukanie__trasy_8cpp_a97cf9b636eb7881f36ab50a831a8a323}{obliczDlugoscTrasy}}(znalezioneTrasy[i],macierzOdleglosci);}
 \DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00143}00143\ }
-\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00144}00144\ \}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(dlugoscTrasy<dlugoscNajkrotszejTrasy)\{}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ indeksNajkrotszejTrasy\ =\ i;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ dlugoscNajkrotszejTrasy\ =\ dlugoscTrasy;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00148}00148\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00149}00149\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00150}00150\ \ \ \ \ \textcolor{comment}{//Spakowanie\ wynikow}}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00151}00151\ \ \ \ \ std::pair<double,\ std::vector<int>\ >\ wynik;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00152}00152\ \ \ \ \ wynik.first\ =\ dlugoscNajkrotszejTrasy;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00153}00153\ \ \ \ \ wynik.second\ =\ znalezioneTrasy[indeksNajkrotszejTrasy];}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00155}00155\ \ \ \ \ \textcolor{keywordflow}{return}\ wynik;}
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{szukanie__trasy_8cpp_source_l00157}00157\ \}}
 
 \end{DoxyCode}

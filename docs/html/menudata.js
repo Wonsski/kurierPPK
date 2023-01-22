@@ -24,6 +24,11 @@
 */
 var menudata={children:[
 {text:"Strona główna",url:"index.html"},
+{text:"Przestrzenie nazw",url:"namespaces.html",children:[
+{text:"Lista przestrzeni nazw",url:"namespaces.html"},
+{text:"Składowe przestrzeni nazw",url:"namespacemembers.html",children:[
+{text:"Wszystko",url:"namespacemembers.html"},
+{text:"Zmienne",url:"namespacemembers_vars.html"}]}]},
 {text:"Klasy",url:"annotated.html",children:[
 {text:"Lista klas",url:"annotated.html"},
 {text:"Indeks klas",url:"classes.html"},

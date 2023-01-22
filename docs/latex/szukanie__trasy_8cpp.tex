@@ -14,11 +14,11 @@ Wykres zależności załączania dla szukanie\+\_\+trasy.\+cpp\+:\nopagebreak
 \doxysubsection*{Funkcje}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{szukanie__trasy_8cpp_af86065525db369ef1829ac9a7fe2e996}{czy\+Moze\+Jechac}} (int klient, int pozycja, std\+::pair$<$ int, double $\ast$$\ast$ $>$ macierz\+Odleglosci, std\+::vector$<$ int $>$ trasa)
+bool \mbox{\hyperlink{szukanie__trasy_8cpp_a180ae3ff30bf8e7a1d0df784ffd7f7cf}{czy\+Moze\+Jechac}} (const int \&klient, const int \&pozycja, const std\+::pair$<$ int, double $\ast$$\ast$ $>$ \&macierz\+Odleglosci, const std\+::vector$<$ int $>$ \&trasa)
 \item 
-void \mbox{\hyperlink{szukanie__trasy_8cpp_a37862cbe5d5a2240aa06da34bdbc7245}{szukaj\+Trasy}} (int pozycja, std\+::pair$<$ int, double $\ast$$\ast$ $>$ macierz\+Odleglosci, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&znalezione\+Trasy, std\+::vector$<$ int $>$ trasa)
+void \mbox{\hyperlink{szukanie__trasy_8cpp_a0f6fe9ce613420a479843cd0df9b1fdc}{szukaj\+Trasy}} (int pozycja, std\+::pair$<$ int, double $\ast$$\ast$ $>$ \&macierz\+Odleglosci, std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&znalezione\+Trasy, std\+::vector$<$ int $>$ trasa, const int \&\mbox{\hyperlink{obsluga__danych_8cpp_ab924122f4178916d2ed497ddf36c0b01}{ile\+Klientow}}, bool odwiedzeni\mbox{[}$\,$\mbox{]})
 \item 
-std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{szukanie__trasy_8cpp_ae44c5ec11d1f8dd502fe6f0a2286af39}{znajdz\+Dostepne\+Trasy}} (std\+::pair$<$ int, double $\ast$$\ast$ $>$ macierz\+Odleglosci)
+std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{szukanie__trasy_8cpp_af890a3cf3988d2e1a57959320260ae09}{znajdz\+Dostepne\+Trasy}} (int start, std\+::pair$<$ int, double $\ast$$\ast$ $>$ macierz\+Odleglosci)
 \item 
 void \mbox{\hyperlink{szukanie__trasy_8cpp_a074c0f03f37923184e6be147d12eb888}{rysuj\+Trase}} (std\+::vector$<$ int $>$ trasa)
 \item 
@@ -31,26 +31,12 @@ std\+::pair$<$ double, std\+::vector$<$ int $>$ $>$ \mbox{\hyperlink{szukanie__t
 
 
 \doxysubsection{Dokumentacja funkcji}
-\mbox{\Hypertarget{szukanie__trasy_8cpp_af86065525db369ef1829ac9a7fe2e996}\label{szukanie__trasy_8cpp_af86065525db369ef1829ac9a7fe2e996}} 
+\mbox{\Hypertarget{szukanie__trasy_8cpp_a180ae3ff30bf8e7a1d0df784ffd7f7cf}\label{szukanie__trasy_8cpp_a180ae3ff30bf8e7a1d0df784ffd7f7cf}} 
 \index{szukanie\_trasy.cpp@{szukanie\_trasy.cpp}!czyMozeJechac@{czyMozeJechac}}
 \index{czyMozeJechac@{czyMozeJechac}!szukanie\_trasy.cpp@{szukanie\_trasy.cpp}}
 \doxysubsubsection{\texorpdfstring{czyMozeJechac()}{czyMozeJechac()}}
-{\footnotesize\ttfamily bool czy\+Moze\+Jechac (\begin{DoxyParamCaption}\item[{int}]{klient,  }\item[{int}]{pozycja,  }\item[{std\+::pair$<$ int, double $\ast$$\ast$ $>$}]{macierz\+Odleglosci,  }\item[{std\+::vector$<$ int $>$}]{trasa }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool czy\+Moze\+Jechac (\begin{DoxyParamCaption}\item[{const int \&}]{klient,  }\item[{const int \&}]{pozycja,  }\item[{const std\+::pair$<$ int, double $\ast$$\ast$ $>$ \&}]{macierz\+Odleglosci,  }\item[{const std\+::vector$<$ int $>$ \&}]{trasa }\end{DoxyParamCaption})}
 
-Funkcja sprawdza czy istnieje mozliwosc przejazdu z aktualnej pozycji do nastepnego docelowego klienta \begin{DoxyReturn}{Zwraca}
-Zwraca prawde jezeli istnieje mozliwosc przejazdu, zwraca falsz jezeli tej mozliwosci nie ma lub docelowy klient juz zostal odwiedziony 
-\end{DoxyReturn}
-
-\begin{DoxyParams}{Parametry}
-{\em klient} & Docelowy punkt przejazdu \\
-\hline
-{\em pozycja} & Aktualna pozycja kuriera \\
-\hline
-{\em macierz\+Odleglosci} & Struktura zawierajaca wielkosc macierzy oraz macierz z danymi wejsciowymi \\
-\hline
-{\em trasa} & Wektor zawierajacy aktualna trase przejazdu \\
-\hline
-\end{DoxyParams}
 
 
 Definicja w linii \mbox{\hyperlink{szukanie__trasy_8cpp_source_l00007}{7}} pliku \mbox{\hyperlink{szukanie__trasy_8cpp_source}{szukanie\+\_\+trasy.\+cpp}}.
@@ -59,7 +45,7 @@ Oto graf wywoływań tej funkcji\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{szukanie__trasy_8cpp_af86065525db369ef1829ac9a7fe2e996_icgraph}
+\includegraphics[width=350pt]{szukanie__trasy_8cpp_a180ae3ff30bf8e7a1d0df784ffd7f7cf_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{szukanie__trasy_8cpp_a97cf9b636eb7881f36ab50a831a8a323}\label{szukanie__trasy_8cpp_a97cf9b636eb7881f36ab50a831a8a323}} 
@@ -80,10 +66,9 @@ Zwraca dlugosc trasy wejsciowej
 \end{DoxyParams}
 
 
-Definicja w linii \mbox{\hyperlink{szukanie__trasy_8cpp_source_l00093}{93}} pliku \mbox{\hyperlink{szukanie__trasy_8cpp_source}{szukanie\+\_\+trasy.\+cpp}}.
+Definicja w linii \mbox{\hyperlink{szukanie__trasy_8cpp_source_l00106}{106}} pliku \mbox{\hyperlink{szukanie__trasy_8cpp_source}{szukanie\+\_\+trasy.\+cpp}}.
 
-Oto graf wywoływań tej funkcji\+:
-\nopagebreak
+Oto graf wywoływań tej funkcji\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -103,52 +88,37 @@ Funkcja wypisujaca pojedyncza trase w graficzny sposob typu (1) -\/\texorpdfstri
 \end{DoxyParams}
 
 
-Definicja w linii \mbox{\hyperlink{szukanie__trasy_8cpp_source_l00081}{81}} pliku \mbox{\hyperlink{szukanie__trasy_8cpp_source}{szukanie\+\_\+trasy.\+cpp}}.
+Definicja w linii \mbox{\hyperlink{szukanie__trasy_8cpp_source_l00094}{94}} pliku \mbox{\hyperlink{szukanie__trasy_8cpp_source}{szukanie\+\_\+trasy.\+cpp}}.
 
-Oto graf wywoływań tej funkcji\+:
-\nopagebreak
+Oto graf wywoływań tej funkcji\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{szukanie__trasy_8cpp_a074c0f03f37923184e6be147d12eb888_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{szukanie__trasy_8cpp_a37862cbe5d5a2240aa06da34bdbc7245}\label{szukanie__trasy_8cpp_a37862cbe5d5a2240aa06da34bdbc7245}} 
+\mbox{\Hypertarget{szukanie__trasy_8cpp_a0f6fe9ce613420a479843cd0df9b1fdc}\label{szukanie__trasy_8cpp_a0f6fe9ce613420a479843cd0df9b1fdc}} 
 \index{szukanie\_trasy.cpp@{szukanie\_trasy.cpp}!szukajTrasy@{szukajTrasy}}
 \index{szukajTrasy@{szukajTrasy}!szukanie\_trasy.cpp@{szukanie\_trasy.cpp}}
 \doxysubsubsection{\texorpdfstring{szukajTrasy()}{szukajTrasy()}}
-{\footnotesize\ttfamily void szukaj\+Trasy (\begin{DoxyParamCaption}\item[{int}]{pozycja,  }\item[{std\+::pair$<$ int, double $\ast$$\ast$ $>$}]{macierz\+Odleglosci,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{znalezione\+Trasy,  }\item[{std\+::vector$<$ int $>$}]{trasa }\end{DoxyParamCaption})}
-
-Funkcja rekurencyjna dobierajaca odpowiednie kombinacje \begin{DoxyReturn}{Zwraca}
-Wyniki rekurencji zapisywane sa w parametrsze wejsciowym znalezione\+Trasy 
-\end{DoxyReturn}
-
-\begin{DoxyParams}{Parametry}
-{\em pozycja} & Aktualna pozycja kuriera, punkt odniesienia do nastpnego punktu docelowego \\
-\hline
-{\em macierz\+Odleglosci} & Struktura zawierajaca wielkosc macierzy oraz macierz z danymi wejsciowymi \\
-\hline
-{\em znalezione\+Trasy} & Wektor przetrzymujacy wyniki rekurencji \\
-\hline
-{\em trasa} & Wektor zawierajacy aktualna trase przejazdu \\
-\hline
-\end{DoxyParams}
+{\footnotesize\ttfamily void szukaj\+Trasy (\begin{DoxyParamCaption}\item[{int}]{pozycja,  }\item[{std\+::pair$<$ int, double $\ast$$\ast$ $>$ \&}]{macierz\+Odleglosci,  }\item[{std\+::vector$<$ std\+::vector$<$ int $>$ $>$ \&}]{znalezione\+Trasy,  }\item[{std\+::vector$<$ int $>$}]{trasa,  }\item[{const int \&}]{ile\+Klientow,  }\item[{bool}]{odwiedzeni\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
 
-Definicja w linii \mbox{\hyperlink{szukanie__trasy_8cpp_source_l00028}{28}} pliku \mbox{\hyperlink{szukanie__trasy_8cpp_source}{szukanie\+\_\+trasy.\+cpp}}.
+
+Definicja w linii \mbox{\hyperlink{szukanie__trasy_8cpp_source_l00022}{22}} pliku \mbox{\hyperlink{szukanie__trasy_8cpp_source}{szukanie\+\_\+trasy.\+cpp}}.
 
 Oto graf wywołań dla tej funkcji\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=274pt]{szukanie__trasy_8cpp_a37862cbe5d5a2240aa06da34bdbc7245_cgraph}
+\includegraphics[width=274pt]{szukanie__trasy_8cpp_a0f6fe9ce613420a479843cd0df9b1fdc_cgraph}
 \end{center}
 \end{figure}
 Oto graf wywoływań tej funkcji\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{szukanie__trasy_8cpp_a37862cbe5d5a2240aa06da34bdbc7245_icgraph}
+\includegraphics[width=350pt]{szukanie__trasy_8cpp_a0f6fe9ce613420a479843cd0df9b1fdc_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{szukanie__trasy_8cpp_a41347fddc76ac758ef7cc9b424f07671}\label{szukanie__trasy_8cpp_a41347fddc76ac758ef7cc9b424f07671}} 
@@ -169,7 +139,7 @@ Zwraca strukture zawierajaca dlugosc najkrotszej trasy oraz wektor zawierajacy p
 \end{DoxyParams}
 
 
-Definicja w linii \mbox{\hyperlink{szukanie__trasy_8cpp_source_l00122}{122}} pliku \mbox{\hyperlink{szukanie__trasy_8cpp_source}{szukanie\+\_\+trasy.\+cpp}}.
+Definicja w linii \mbox{\hyperlink{szukanie__trasy_8cpp_source_l00135}{135}} pliku \mbox{\hyperlink{szukanie__trasy_8cpp_source}{szukanie\+\_\+trasy.\+cpp}}.
 
 Oto graf wywołań dla tej funkcji\+:\nopagebreak
 \begin{figure}[H]
@@ -200,53 +170,53 @@ Funkcja wypisujaca wszystkie mozliwe trasy przejazdu
 \end{DoxyParams}
 
 
-Definicja w linii \mbox{\hyperlink{szukanie__trasy_8cpp_source_l00107}{107}} pliku \mbox{\hyperlink{szukanie__trasy_8cpp_source}{szukanie\+\_\+trasy.\+cpp}}.
+Definicja w linii \mbox{\hyperlink{szukanie__trasy_8cpp_source_l00120}{120}} pliku \mbox{\hyperlink{szukanie__trasy_8cpp_source}{szukanie\+\_\+trasy.\+cpp}}.
 
-Oto graf wywołań dla tej funkcji\+:
-\nopagebreak
+Oto graf wywołań dla tej funkcji\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=338pt]{szukanie__trasy_8cpp_aa59b52e68f17208556a8b917a46297a7_cgraph}
 \end{center}
 \end{figure}
-Oto graf wywoływań tej funkcji\+:
-\nopagebreak
+Oto graf wywoływań tej funkcji\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=273pt]{szukanie__trasy_8cpp_aa59b52e68f17208556a8b917a46297a7_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{szukanie__trasy_8cpp_ae44c5ec11d1f8dd502fe6f0a2286af39}\label{szukanie__trasy_8cpp_ae44c5ec11d1f8dd502fe6f0a2286af39}} 
+\mbox{\Hypertarget{szukanie__trasy_8cpp_af890a3cf3988d2e1a57959320260ae09}\label{szukanie__trasy_8cpp_af890a3cf3988d2e1a57959320260ae09}} 
 \index{szukanie\_trasy.cpp@{szukanie\_trasy.cpp}!znajdzDostepneTrasy@{znajdzDostepneTrasy}}
 \index{znajdzDostepneTrasy@{znajdzDostepneTrasy}!szukanie\_trasy.cpp@{szukanie\_trasy.cpp}}
 \doxysubsubsection{\texorpdfstring{znajdzDostepneTrasy()}{znajdzDostepneTrasy()}}
-{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ int $>$ $>$ znajdz\+Dostepne\+Trasy (\begin{DoxyParamCaption}\item[{std\+::pair$<$ int, double $\ast$$\ast$ $>$}]{macierz\+Odleglosci }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::vector$<$ int $>$ $>$ znajdz\+Dostepne\+Trasy (\begin{DoxyParamCaption}\item[{int}]{start,  }\item[{std\+::pair$<$ int, double $\ast$$\ast$ $>$}]{macierz\+Odleglosci }\end{DoxyParamCaption})}
 
 Funkcja wyszukujaca wszystkie mozliwe trasy przejazdu \begin{DoxyReturn}{Zwraca}
 Zwraca wektor wektorow zawierajacych wszystkie mozliwe trasy 
 \end{DoxyReturn}
 
 \begin{DoxyParams}{Parametry}
+{\em start} & Identyfikator klienta rozpoczynajacego trase (identyfikator klienta musi być \texorpdfstring{$>$}{>}=1) \\
+\hline
 {\em macierz\+Odleglosci} & Struktura zawierajaca wielkosc macierzy oraz macierz z danymi wejsciowymi \\
 \hline
 \end{DoxyParams}
 
 
-Definicja w linii \mbox{\hyperlink{szukanie__trasy_8cpp_source_l00068}{68}} pliku \mbox{\hyperlink{szukanie__trasy_8cpp_source}{szukanie\+\_\+trasy.\+cpp}}.
+Definicja w linii \mbox{\hyperlink{szukanie__trasy_8cpp_source_l00065}{65}} pliku \mbox{\hyperlink{szukanie__trasy_8cpp_source}{szukanie\+\_\+trasy.\+cpp}}.
 
 Oto graf wywołań dla tej funkcji\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{szukanie__trasy_8cpp_ae44c5ec11d1f8dd502fe6f0a2286af39_cgraph}
+\includegraphics[width=350pt]{szukanie__trasy_8cpp_af890a3cf3988d2e1a57959320260ae09_cgraph}
 \end{center}
 \end{figure}
 Oto graf wywoływań tej funkcji\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=266pt]{szukanie__trasy_8cpp_ae44c5ec11d1f8dd502fe6f0a2286af39_icgraph}
+\includegraphics[width=266pt]{szukanie__trasy_8cpp_af890a3cf3988d2e1a57959320260ae09_icgraph}
 \end{center}
 \end{figure}

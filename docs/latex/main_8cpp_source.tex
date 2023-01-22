@@ -17,80 +17,96 @@
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ std::string\ nazwa\_pliku;}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ std::string\ plik\_zapis\ =\ \textcolor{stringliteral}{"{}wyjscie.txt"{}};\ \textcolor{comment}{//Domyslna\ nazwa\ pliku\ wyjsciowego}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ wypisuj\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ std::pair<int,double**>\ macierzOdleglosci;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ std::pair<int,double**>\ macierzOdleglosci;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00018}00018\ }
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00019}00019\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(strcmp(\ args[1],\ \textcolor{stringliteral}{"{}-\/v"{}})\ ==\ 0)\{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ wypisuj=\textcolor{keyword}{true};}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}00023\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!args[2])\{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Dodaj\ argument\ z\ nazwą\ pliku!"{}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ nazwa\_pliku\ =\ args[2];}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(args[3])\{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ plik\_zapis\ =\ args[3];}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!args[1])\{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Dodaj\ argument\ z\ nazwą\ pliku!"{}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ nazwa\_pliku\ =\ args[1];}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(args[2])\{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ plik\_zapis\ =\ args[2];}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Sprawdzanie\ wybranych\ opcji}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ licznikWlaczonychOpcji\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ wypisuj\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ ustawStart\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ klient\_start\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=1;\ i<argc;\ i++)\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(strcmp(\ args[i],\ \textcolor{stringliteral}{"{}-\/v"{}})\ ==\ 0)\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ wypisuj=\textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ licznikWlaczonychOpcji++;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(strcmp(\ args[i],\ \textcolor{stringliteral}{"{}-\/s"{}})\ ==\ 0)\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ustawStart=\textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ licznikWlaczonychOpcji+=2;\ \ \ \ \textcolor{comment}{//Plus\ parametr\ s\ \ }}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(args[i+1])\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ klient\_start\ =\ atoi(args[i+1]);\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Opcja\ -\/s\ potrzebuje\ parametru.\ Instrukcja\ jak\ to\ zrobić\ jest\ dostępna\ po\ uruchomieniu\ programu\ bez\ parametrów"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \ \ \ }
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Wczytywanie\ danych}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ macierzOdleglosci\ =\ \mbox{\hyperlink{obsluga__danych_8cpp_a3e5e8c16678672044b45e5f439985aa7}{wczytajPlik}}(nazwa\_pliku);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(wypisuj)\{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Wypisanie\ wczytanych\ danych}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{obsluga__danych_8cpp_ab347b1be4c563bc2117bf53e6072f94b}{wypiszOdleglosci}}(macierzOdleglosci);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Generowanie\ dostepnych\ tras}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ std::vector<\ std::vector<int>\ >znalezioneTrasy\ =\ \mbox{\hyperlink{szukanie__trasy_8cpp_ae44c5ec11d1f8dd502fe6f0a2286af39}{znajdzDostepneTrasy}}(macierzOdleglosci);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(znalezioneTrasy.size()>0)\{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(wypisuj)\{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Wypisanie\ znalezionych\ tras}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{szukanie__trasy_8cpp_aa59b52e68f17208556a8b917a46297a7}{wypiszZnalezioneTrasy}}(znalezioneTrasy,macierzOdleglosci);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Znalezienie\ najkrotszej\ trasy}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ std::pair<double,\ std::vector<int>\ >\ najkrotszaTrasa\ =\ \mbox{\hyperlink{szukanie__trasy_8cpp_a41347fddc76ac758ef7cc9b424f07671}{wybierzNajkrotszaTrase}}(znalezioneTrasy,macierzOdleglosci);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00065}00065\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Wypisz\ najkrotsza\ trase}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::setfill(\textcolor{charliteral}{'-\/'})\ <<\ std::setw(30)\ <<\ \textcolor{charliteral}{'-\/'}\ <<\ std::setfill(\textcolor{charliteral}{'\ '})\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::setw(7)\ <<\ \textcolor{charliteral}{'\ '}\ <<\ \textcolor{stringliteral}{"{}WYNIKI\ PROGRAMU"{}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::setfill(\textcolor{charliteral}{'-\/'})\ <<\ std::setw(30)\ <<\ \textcolor{charliteral}{'-\/'}\ <<\ std::setfill(\textcolor{charliteral}{'\ '})\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00071}00071\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Znaleziona\ trasa:"{}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{szukanie__trasy_8cpp_a074c0f03f37923184e6be147d12eb888}{rysujTrase}}(najkrotszaTrasa.second);}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl\ <<\ std::endl\ <<\ \textcolor{stringliteral}{"{}Łączna\ długość\ trasy:\ "{}}\ <<\ najkrotszaTrasa.first\ <<\ std::endl\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00075}00075\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Zapisz\ wynik}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{obsluga__danych_8cpp_a4e037a90c2e6b0deee1b0d04062fe729}{zapiszDoPliku}}(plik\_zapis,najkrotszaTrasa);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ indeksParamNazwaPliku\ =\ 1+licznikWlaczonychOpcji;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ indeksParamNazwaZapisPliku\ =\ 2+licznikWlaczonychOpcji;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(args[indeksParamNazwaPliku]\ \&\&\ licznikWlaczonychOpcji+1<argc)\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ nazwa\_pliku\ =\ args[indeksParamNazwaPliku];}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(args[indeksParamNazwaZapisPliku])\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ plik\_zapis\ =\ args[indeksParamNazwaZapisPliku];}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Podaj\ poprawnie\ parametry.\ Instrukcja\ jak\ to\ zrobić\ jest\ dostępna\ po\ uruchomieniu\ programu\ bez\ parametrów"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Wczytywanie\ danych}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ macierzOdleglosci\ =\ \mbox{\hyperlink{obsluga__danych_8cpp_a3e5e8c16678672044b45e5f439985aa7}{wczytajPlik}}(nazwa\_pliku);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(wypisuj)\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Wypisanie\ wczytanych\ danych}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{obsluga__danych_8cpp_ab347b1be4c563bc2117bf53e6072f94b}{wypiszOdleglosci}}(macierzOdleglosci);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Generowanie\ dostepnych\ tras}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl\ <<\ \textcolor{stringliteral}{"{}Start\ od\ klienta\ nr:\ "{}}\ <<\ klient\_start\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ std::vector<\ std::vector<int>\ >znalezioneTrasy\ =\ \mbox{\hyperlink{szukanie__trasy_8cpp_af890a3cf3988d2e1a57959320260ae09}{znajdzDostepneTrasy}}(klient\_start,macierzOdleglosci);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(znalezioneTrasy.size()>0)\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(wypisuj)\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Wypisanie\ znalezionych\ tras}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{szukanie__trasy_8cpp_aa59b52e68f17208556a8b917a46297a7}{wypiszZnalezioneTrasy}}(znalezioneTrasy,macierzOdleglosci);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{\Hypertarget{main_8cpp_source_l00078}00078\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Brak\ tras}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::setfill(\textcolor{charliteral}{'-\/'})\ <<\ std::setw(63)\ <<\ \textcolor{charliteral}{'-\/'}\ <<\ std::setfill(\textcolor{charliteral}{'\ '})\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::setw(20)\ <<\ \textcolor{charliteral}{'\ '}\ <<\ \textcolor{stringliteral}{"{}NIE\ MOŻNA\ UTWORZYĆ\ TRASY"{}}\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::setfill(\textcolor{charliteral}{'-\/'})\ <<\ std::setw(63)\ <<\ \textcolor{charliteral}{'-\/'}\ <<\ std::setfill(\textcolor{charliteral}{'\ '})\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Nie\ udało\ się\ utworzyć\ trasy\ korzystając\ z\ wprowadzonych\ danych"{}}\ <<std::endl;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Wprowadzony\ plik\ wejściowy:\ "{}}\ <<\ nazwa\_pliku\ <<\ std::endl\ <<\ std::endl;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00088}00088\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00089}00089\ }
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
-\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00091}00091\ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Znalezienie\ najkrotszej\ trasy}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ std::pair<double,\ std::vector<int>\ >\ najkrotszaTrasa\ =\ \mbox{\hyperlink{szukanie__trasy_8cpp_a41347fddc76ac758ef7cc9b424f07671}{wybierzNajkrotszaTrase}}(znalezioneTrasy,macierzOdleglosci);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Wypisz\ najkrotsza\ trase}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::setfill(\textcolor{charliteral}{'-\/'})\ <<\ std::setw(30)\ <<\ \textcolor{charliteral}{'-\/'}\ <<\ std::setfill(\textcolor{charliteral}{'\ '})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::setw(7)\ <<\ \textcolor{charliteral}{'\ '}\ <<\ \textcolor{stringliteral}{"{}WYNIKI\ PROGRAMU"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::setfill(\textcolor{charliteral}{'-\/'})\ <<\ std::setw(30)\ <<\ \textcolor{charliteral}{'-\/'}\ <<\ std::setfill(\textcolor{charliteral}{'\ '})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Znaleziona\ trasa:"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{szukanie__trasy_8cpp_a074c0f03f37923184e6be147d12eb888}{rysujTrase}}(najkrotszaTrasa.second);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl\ <<\ std::endl\ <<\ \textcolor{stringliteral}{"{}Łączna\ długość\ trasy:\ "{}}\ <<\ najkrotszaTrasa.first\ <<\ std::endl\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Zapisz\ wynik}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{obsluga__danych_8cpp_a4e037a90c2e6b0deee1b0d04062fe729}{zapiszDoPliku}}(plik\_zapis,najkrotszaTrasa);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{else}\{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Brak\ tras}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::setfill(\textcolor{charliteral}{'-\/'})\ <<\ std::setw(63)\ <<\ \textcolor{charliteral}{'-\/'}\ <<\ std::setfill(\textcolor{charliteral}{'\ '})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::setw(20)\ <<\ \textcolor{charliteral}{'\ '}\ <<\ \textcolor{stringliteral}{"{}NIE\ MOŻNA\ UTWORZYĆ\ TRASY"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::setfill(\textcolor{charliteral}{'-\/'})\ <<\ std::setw(63)\ <<\ \textcolor{charliteral}{'-\/'}\ <<\ std::setfill(\textcolor{charliteral}{'\ '})\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Nie\ udało\ się\ utworzyć\ trasy\ korzystając\ z\ wprowadzonych\ danych"{}}\ <<std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Wprowadzony\ plik\ wejściowy:\ "{}}\ <<\ nazwa\_pliku\ <<\ std::endl\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00104}00104\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00106}00106\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00107}00107\ \}}
 
 \end{DoxyCode}

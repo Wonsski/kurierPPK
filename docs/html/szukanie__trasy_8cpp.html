@@ -96,12 +96,12 @@ Wykres zależności załączania dla szukanie_trasy.cpp:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funkcje</h2></td></tr>
-<tr class="memitem:af86065525db369ef1829ac9a7fe2e996"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="szukanie__trasy_8cpp.html#af86065525db369ef1829ac9a7fe2e996">czyMozeJechac</a> (int klient, int pozycja, std::pair&lt; int, double ** &gt; macierzOdleglosci, std::vector&lt; int &gt; trasa)</td></tr>
-<tr class="separator:af86065525db369ef1829ac9a7fe2e996"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37862cbe5d5a2240aa06da34bdbc7245"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="szukanie__trasy_8cpp.html#a37862cbe5d5a2240aa06da34bdbc7245">szukajTrasy</a> (int pozycja, std::pair&lt; int, double ** &gt; macierzOdleglosci, std::vector&lt; std::vector&lt; int &gt; &gt; &amp;znalezioneTrasy, std::vector&lt; int &gt; trasa)</td></tr>
-<tr class="separator:a37862cbe5d5a2240aa06da34bdbc7245"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae44c5ec11d1f8dd502fe6f0a2286af39"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="szukanie__trasy_8cpp.html#ae44c5ec11d1f8dd502fe6f0a2286af39">znajdzDostepneTrasy</a> (std::pair&lt; int, double ** &gt; macierzOdleglosci)</td></tr>
-<tr class="separator:ae44c5ec11d1f8dd502fe6f0a2286af39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a180ae3ff30bf8e7a1d0df784ffd7f7cf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="szukanie__trasy_8cpp.html#a180ae3ff30bf8e7a1d0df784ffd7f7cf">czyMozeJechac</a> (const int &amp;klient, const int &amp;pozycja, const std::pair&lt; int, double ** &gt; &amp;macierzOdleglosci, const std::vector&lt; int &gt; &amp;trasa)</td></tr>
+<tr class="separator:a180ae3ff30bf8e7a1d0df784ffd7f7cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f6fe9ce613420a479843cd0df9b1fdc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="szukanie__trasy_8cpp.html#a0f6fe9ce613420a479843cd0df9b1fdc">szukajTrasy</a> (int pozycja, std::pair&lt; int, double ** &gt; &amp;macierzOdleglosci, std::vector&lt; std::vector&lt; int &gt; &gt; &amp;znalezioneTrasy, std::vector&lt; int &gt; trasa, const int &amp;<a class="el" href="obsluga__danych_8cpp.html#ab924122f4178916d2ed497ddf36c0b01">ileKlientow</a>, bool odwiedzeni[])</td></tr>
+<tr class="separator:a0f6fe9ce613420a479843cd0df9b1fdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af890a3cf3988d2e1a57959320260ae09"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="szukanie__trasy_8cpp.html#af890a3cf3988d2e1a57959320260ae09">znajdzDostepneTrasy</a> (int start, std::pair&lt; int, double ** &gt; macierzOdleglosci)</td></tr>
+<tr class="separator:af890a3cf3988d2e1a57959320260ae09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a074c0f03f37923184e6be147d12eb888"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="szukanie__trasy_8cpp.html#a074c0f03f37923184e6be147d12eb888">rysujTrase</a> (std::vector&lt; int &gt; trasa)</td></tr>
 <tr class="separator:a074c0f03f37923184e6be147d12eb888"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97cf9b636eb7881f36ab50a831a8a323"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="szukanie__trasy_8cpp.html#a97cf9b636eb7881f36ab50a831a8a323">obliczDlugoscTrasy</a> (std::vector&lt; int &gt; trasa, std::pair&lt; int, double ** &gt; macierzOdleglosci)</td></tr>
@@ -112,8 +112,8 @@ Funkcje</h2></td></tr>
 <tr class="separator:a41347fddc76ac758ef7cc9b424f07671"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Dokumentacja funkcji</h2>
-<a id="af86065525db369ef1829ac9a7fe2e996" name="af86065525db369ef1829ac9a7fe2e996"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af86065525db369ef1829ac9a7fe2e996">&#9670;&#160;</a></span>czyMozeJechac()</h2>
+<a id="a180ae3ff30bf8e7a1d0df784ffd7f7cf" name="a180ae3ff30bf8e7a1d0df784ffd7f7cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a180ae3ff30bf8e7a1d0df784ffd7f7cf">&#9670;&#160;</a></span>czyMozeJechac()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -121,25 +121,25 @@ Funkcje</h2></td></tr>
         <tr>
           <td class="memname">bool czyMozeJechac </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">const int &amp;&#160;</td>
           <td class="paramname"><em>klient</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">const int &amp;&#160;</td>
           <td class="paramname"><em>pozycja</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::pair&lt; int, double ** &gt;&#160;</td>
+          <td class="paramtype">const std::pair&lt; int, double ** &gt; &amp;&#160;</td>
           <td class="paramname"><em>macierzOdleglosci</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; int &gt;&#160;</td>
+          <td class="paramtype">const std::vector&lt; int &gt; &amp;&#160;</td>
           <td class="paramname"><em>trasa</em>&#160;</td>
         </tr>
         <tr>
@@ -149,26 +149,16 @@ Funkcje</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Funkcja sprawdza czy istnieje mozliwosc przejazdu z aktualnej pozycji do nastepnego docelowego klienta </p><dl class="section return"><dt>Zwraca</dt><dd>Zwraca prawde jezeli istnieje mozliwosc przejazdu, zwraca falsz jezeli tej mozliwosci nie ma lub docelowy klient juz zostal odwiedziony </dd></dl>
-<dl class="params"><dt>Parametry</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">klient</td><td>Docelowy punkt przejazdu </td></tr>
-    <tr><td class="paramname">pozycja</td><td>Aktualna pozycja kuriera </td></tr>
-    <tr><td class="paramname">macierzOdleglosci</td><td>Struktura zawierajaca wielkosc macierzy oraz macierz z danymi wejsciowymi </td></tr>
-    <tr><td class="paramname">trasa</td><td>Wektor zawierajacy aktualna trase przejazdu </td></tr>
-  </table>
-  </dd>
-</dl>
 
 <p class="definition">Definicja w linii <a class="el" href="szukanie__trasy_8cpp_source.html#l00007">7</a> pliku <a class="el" href="szukanie__trasy_8cpp_source.html">szukanie_trasy.cpp</a>.</p>
 <div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
 <div class="dyncontent">
-<div class="center"><img src="szukanie__trasy_8cpp_af86065525db369ef1829ac9a7fe2e996_icgraph.png" border="0" usemap="#aszukanie__trasy_8cpp_af86065525db369ef1829ac9a7fe2e996_icgraph" alt=""/></div>
-<map name="aszukanie__trasy_8cpp_af86065525db369ef1829ac9a7fe2e996_icgraph" id="aszukanie__trasy_8cpp_af86065525db369ef1829ac9a7fe2e996_icgraph">
+<div class="center"><img src="szukanie__trasy_8cpp_a180ae3ff30bf8e7a1d0df784ffd7f7cf_icgraph.png" border="0" usemap="#aszukanie__trasy_8cpp_a180ae3ff30bf8e7a1d0df784ffd7f7cf_icgraph" alt=""/></div>
+<map name="aszukanie__trasy_8cpp_a180ae3ff30bf8e7a1d0df784ffd7f7cf_icgraph" id="aszukanie__trasy_8cpp_a180ae3ff30bf8e7a1d0df784ffd7f7cf_icgraph">
 <area shape="rect" title=" " alt="" coords="443,29,560,55"/>
-<area shape="rect" href="szukanie__trasy_8cpp.html#a37862cbe5d5a2240aa06da34bdbc7245" title=" " alt="" coords="301,29,395,55"/>
-<area shape="rect" href="szukanie__trasy_8cpp.html#ae44c5ec11d1f8dd502fe6f0a2286af39" title=" " alt="" coords="104,29,253,55"/>
+<area shape="rect" href="szukanie__trasy_8cpp.html#a0f6fe9ce613420a479843cd0df9b1fdc" title=" " alt="" coords="301,29,395,55"/>
+<area shape="rect" href="szukanie__trasy_8cpp.html#af890a3cf3988d2e1a57959320260ae09" title=" " alt="" coords="104,29,253,55"/>
 <area shape="rect" href="main_8cpp.html#a700a0caa5b70a06d1064e576f9f3cf65" title=" " alt="" coords="5,29,56,55"/>
 </map>
 </div>
@@ -209,7 +199,7 @@ Oto graf wywoływań tej funkcji:</div>
   </dd>
 </dl>
 
-<p class="definition">Definicja w linii <a class="el" href="szukanie__trasy_8cpp_source.html#l00093">93</a> pliku <a class="el" href="szukanie__trasy_8cpp_source.html">szukanie_trasy.cpp</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="szukanie__trasy_8cpp_source.html#l00106">106</a> pliku <a class="el" href="szukanie__trasy_8cpp_source.html">szukanie_trasy.cpp</a>.</p>
 <div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
 <div class="dyncontent">
@@ -246,7 +236,7 @@ Oto graf wywoływań tej funkcji:</div>
   </dd>
 </dl>
 
-<p class="definition">Definicja w linii <a class="el" href="szukanie__trasy_8cpp_source.html#l00081">81</a> pliku <a class="el" href="szukanie__trasy_8cpp_source.html">szukanie_trasy.cpp</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="szukanie__trasy_8cpp_source.html#l00094">94</a> pliku <a class="el" href="szukanie__trasy_8cpp_source.html">szukanie_trasy.cpp</a>.</p>
 <div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
 <div class="dyncontent">
@@ -260,8 +250,8 @@ Oto graf wywoływań tej funkcji:</div>
 
 </div>
 </div>
-<a id="a37862cbe5d5a2240aa06da34bdbc7245" name="a37862cbe5d5a2240aa06da34bdbc7245"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37862cbe5d5a2240aa06da34bdbc7245">&#9670;&#160;</a></span>szukajTrasy()</h2>
+<a id="a0f6fe9ce613420a479843cd0df9b1fdc" name="a0f6fe9ce613420a479843cd0df9b1fdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f6fe9ce613420a479843cd0df9b1fdc">&#9670;&#160;</a></span>szukajTrasy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -275,7 +265,7 @@ Oto graf wywoływań tej funkcji:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::pair&lt; int, double ** &gt;&#160;</td>
+          <td class="paramtype">std::pair&lt; int, double ** &gt; &amp;&#160;</td>
           <td class="paramname"><em>macierzOdleglosci</em>, </td>
         </tr>
         <tr>
@@ -288,7 +278,19 @@ Oto graf wywoływań tej funkcji:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::vector&lt; int &gt;&#160;</td>
-          <td class="paramname"><em>trasa</em>&#160;</td>
+          <td class="paramname"><em>trasa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>ileKlientow</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>odwiedzeni</em>[]&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -297,35 +299,25 @@ Oto graf wywoływań tej funkcji:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Funkcja rekurencyjna dobierajaca odpowiednie kombinacje </p><dl class="section return"><dt>Zwraca</dt><dd>Wyniki rekurencji zapisywane sa w parametrsze wejsciowym znalezioneTrasy </dd></dl>
-<dl class="params"><dt>Parametry</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pozycja</td><td>Aktualna pozycja kuriera, punkt odniesienia do nastpnego punktu docelowego </td></tr>
-    <tr><td class="paramname">macierzOdleglosci</td><td>Struktura zawierajaca wielkosc macierzy oraz macierz z danymi wejsciowymi </td></tr>
-    <tr><td class="paramname">znalezioneTrasy</td><td>Wektor przetrzymujacy wyniki rekurencji </td></tr>
-    <tr><td class="paramname">trasa</td><td>Wektor zawierajacy aktualna trase przejazdu </td></tr>
-  </table>
-  </dd>
-</dl>
 
-<p class="definition">Definicja w linii <a class="el" href="szukanie__trasy_8cpp_source.html#l00028">28</a> pliku <a class="el" href="szukanie__trasy_8cpp_source.html">szukanie_trasy.cpp</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="szukanie__trasy_8cpp_source.html#l00022">22</a> pliku <a class="el" href="szukanie__trasy_8cpp_source.html">szukanie_trasy.cpp</a>.</p>
 <div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
 <div class="dyncontent">
-<div class="center"><img src="szukanie__trasy_8cpp_a37862cbe5d5a2240aa06da34bdbc7245_cgraph.png" border="0" usemap="#aszukanie__trasy_8cpp_a37862cbe5d5a2240aa06da34bdbc7245_cgraph" alt=""/></div>
-<map name="aszukanie__trasy_8cpp_a37862cbe5d5a2240aa06da34bdbc7245_cgraph" id="aszukanie__trasy_8cpp_a37862cbe5d5a2240aa06da34bdbc7245_cgraph">
+<div class="center"><img src="szukanie__trasy_8cpp_a0f6fe9ce613420a479843cd0df9b1fdc_cgraph.png" border="0" usemap="#aszukanie__trasy_8cpp_a0f6fe9ce613420a479843cd0df9b1fdc_cgraph" alt=""/></div>
+<map name="aszukanie__trasy_8cpp_a0f6fe9ce613420a479843cd0df9b1fdc_cgraph" id="aszukanie__trasy_8cpp_a0f6fe9ce613420a479843cd0df9b1fdc_cgraph">
 <area shape="rect" title=" " alt="" coords="5,31,99,56"/>
-<area shape="rect" href="szukanie__trasy_8cpp.html#af86065525db369ef1829ac9a7fe2e996" title=" " alt="" coords="147,5,264,31"/>
+<area shape="rect" href="szukanie__trasy_8cpp.html#a180ae3ff30bf8e7a1d0df784ffd7f7cf" title=" " alt="" coords="147,5,264,31"/>
 <area shape="rect" href="obsluga__danych_8cpp.html#ab924122f4178916d2ed497ddf36c0b01" title=" " alt="" coords="163,55,248,80"/>
 </map>
 </div>
 <div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
 <div class="dyncontent">
-<div class="center"><img src="szukanie__trasy_8cpp_a37862cbe5d5a2240aa06da34bdbc7245_icgraph.png" border="0" usemap="#aszukanie__trasy_8cpp_a37862cbe5d5a2240aa06da34bdbc7245_icgraph" alt=""/></div>
-<map name="aszukanie__trasy_8cpp_a37862cbe5d5a2240aa06da34bdbc7245_icgraph" id="aszukanie__trasy_8cpp_a37862cbe5d5a2240aa06da34bdbc7245_icgraph">
+<div class="center"><img src="szukanie__trasy_8cpp_a0f6fe9ce613420a479843cd0df9b1fdc_icgraph.png" border="0" usemap="#aszukanie__trasy_8cpp_a0f6fe9ce613420a479843cd0df9b1fdc_icgraph" alt=""/></div>
+<map name="aszukanie__trasy_8cpp_a0f6fe9ce613420a479843cd0df9b1fdc_icgraph" id="aszukanie__trasy_8cpp_a0f6fe9ce613420a479843cd0df9b1fdc_icgraph">
 <area shape="rect" title=" " alt="" coords="301,29,395,55"/>
-<area shape="rect" href="szukanie__trasy_8cpp.html#ae44c5ec11d1f8dd502fe6f0a2286af39" title=" " alt="" coords="104,29,253,55"/>
+<area shape="rect" href="szukanie__trasy_8cpp.html#af890a3cf3988d2e1a57959320260ae09" title=" " alt="" coords="104,29,253,55"/>
 <area shape="rect" href="main_8cpp.html#a700a0caa5b70a06d1064e576f9f3cf65" title=" " alt="" coords="5,29,56,55"/>
 </map>
 </div>
@@ -366,7 +358,7 @@ Oto graf wywoływań tej funkcji:</div>
   </dd>
 </dl>
 
-<p class="definition">Definicja w linii <a class="el" href="szukanie__trasy_8cpp_source.html#l00122">122</a> pliku <a class="el" href="szukanie__trasy_8cpp_source.html">szukanie_trasy.cpp</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="szukanie__trasy_8cpp_source.html#l00135">135</a> pliku <a class="el" href="szukanie__trasy_8cpp_source.html">szukanie_trasy.cpp</a>.</p>
 <div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
 <div class="dyncontent">
@@ -421,7 +413,7 @@ Oto graf wywoływań tej funkcji:</div>
   </dd>
 </dl>
 
-<p class="definition">Definicja w linii <a class="el" href="szukanie__trasy_8cpp_source.html#l00107">107</a> pliku <a class="el" href="szukanie__trasy_8cpp_source.html">szukanie_trasy.cpp</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="szukanie__trasy_8cpp_source.html#l00120">120</a> pliku <a class="el" href="szukanie__trasy_8cpp_source.html">szukanie_trasy.cpp</a>.</p>
 <div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
 <div class="dyncontent">
@@ -444,8 +436,8 @@ Oto graf wywoływań tej funkcji:</div>
 
 </div>
 </div>
-<a id="ae44c5ec11d1f8dd502fe6f0a2286af39" name="ae44c5ec11d1f8dd502fe6f0a2286af39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae44c5ec11d1f8dd502fe6f0a2286af39">&#9670;&#160;</a></span>znajdzDostepneTrasy()</h2>
+<a id="af890a3cf3988d2e1a57959320260ae09" name="af890a3cf3988d2e1a57959320260ae09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af890a3cf3988d2e1a57959320260ae09">&#9670;&#160;</a></span>znajdzDostepneTrasy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -453,37 +445,48 @@ Oto graf wywoływań tej funkcji:</div>
         <tr>
           <td class="memname">std::vector&lt; std::vector&lt; int &gt; &gt; znajdzDostepneTrasy </td>
           <td>(</td>
-          <td class="paramtype">std::pair&lt; int, double ** &gt;&#160;</td>
-          <td class="paramname"><em>macierzOdleglosci</em></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::pair&lt; int, double ** &gt;&#160;</td>
+          <td class="paramname"><em>macierzOdleglosci</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Funkcja wyszukujaca wszystkie mozliwe trasy przejazdu </p><dl class="section return"><dt>Zwraca</dt><dd>Zwraca wektor wektorow zawierajacych wszystkie mozliwe trasy </dd></dl>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
+    <tr><td class="paramname">start</td><td>Identyfikator klienta rozpoczynajacego trase (identyfikator klienta musi być &gt;=1) </td></tr>
     <tr><td class="paramname">macierzOdleglosci</td><td>Struktura zawierajaca wielkosc macierzy oraz macierz z danymi wejsciowymi </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definicja w linii <a class="el" href="szukanie__trasy_8cpp_source.html#l00068">68</a> pliku <a class="el" href="szukanie__trasy_8cpp_source.html">szukanie_trasy.cpp</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="szukanie__trasy_8cpp_source.html#l00065">65</a> pliku <a class="el" href="szukanie__trasy_8cpp_source.html">szukanie_trasy.cpp</a>.</p>
 <div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
 <div class="dyncontent">
-<div class="center"><img src="szukanie__trasy_8cpp_ae44c5ec11d1f8dd502fe6f0a2286af39_cgraph.png" border="0" usemap="#aszukanie__trasy_8cpp_ae44c5ec11d1f8dd502fe6f0a2286af39_cgraph" alt=""/></div>
-<map name="aszukanie__trasy_8cpp_ae44c5ec11d1f8dd502fe6f0a2286af39_cgraph" id="aszukanie__trasy_8cpp_ae44c5ec11d1f8dd502fe6f0a2286af39_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,155,56"/>
-<area shape="rect" href="szukanie__trasy_8cpp.html#a37862cbe5d5a2240aa06da34bdbc7245" title=" " alt="" coords="203,31,296,56"/>
-<area shape="rect" href="szukanie__trasy_8cpp.html#af86065525db369ef1829ac9a7fe2e996" title=" " alt="" coords="344,5,461,31"/>
-<area shape="rect" href="obsluga__danych_8cpp.html#ab924122f4178916d2ed497ddf36c0b01" title=" " alt="" coords="360,55,445,80"/>
+<div class="center"><img src="szukanie__trasy_8cpp_af890a3cf3988d2e1a57959320260ae09_cgraph.png" border="0" usemap="#aszukanie__trasy_8cpp_af890a3cf3988d2e1a57959320260ae09_cgraph" alt=""/></div>
+<map name="aszukanie__trasy_8cpp_af890a3cf3988d2e1a57959320260ae09_cgraph" id="aszukanie__trasy_8cpp_af890a3cf3988d2e1a57959320260ae09_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,155,55"/>
+<area shape="rect" href="obsluga__danych_8cpp.html#ab924122f4178916d2ed497ddf36c0b01" title=" " alt="" coords="360,5,445,31"/>
+<area shape="rect" href="szukanie__trasy_8cpp.html#a0f6fe9ce613420a479843cd0df9b1fdc" title=" " alt="" coords="203,67,296,92"/>
+<area shape="rect" href="szukanie__trasy_8cpp.html#a180ae3ff30bf8e7a1d0df784ffd7f7cf" title=" " alt="" coords="344,67,461,92"/>
 </map>
 </div>
 <div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
 <div class="dyncontent">
-<div class="center"><img src="szukanie__trasy_8cpp_ae44c5ec11d1f8dd502fe6f0a2286af39_icgraph.png" border="0" usemap="#aszukanie__trasy_8cpp_ae44c5ec11d1f8dd502fe6f0a2286af39_icgraph" alt=""/></div>
-<map name="aszukanie__trasy_8cpp_ae44c5ec11d1f8dd502fe6f0a2286af39_icgraph" id="aszukanie__trasy_8cpp_ae44c5ec11d1f8dd502fe6f0a2286af39_icgraph">
+<div class="center"><img src="szukanie__trasy_8cpp_af890a3cf3988d2e1a57959320260ae09_icgraph.png" border="0" usemap="#aszukanie__trasy_8cpp_af890a3cf3988d2e1a57959320260ae09_icgraph" alt=""/></div>
+<map name="aszukanie__trasy_8cpp_af890a3cf3988d2e1a57959320260ae09_icgraph" id="aszukanie__trasy_8cpp_af890a3cf3988d2e1a57959320260ae09_icgraph">
 <area shape="rect" title=" " alt="" coords="104,5,253,31"/>
 <area shape="rect" href="main_8cpp.html#a700a0caa5b70a06d1064e576f9f3cf65" title=" " alt="" coords="5,5,56,31"/>
 </map>

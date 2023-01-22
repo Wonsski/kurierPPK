@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['klienta_0',['klientA',['../struct_trasa.html#af6a9299b7f37fdd27ba6f05d84199b04',1,'Trasa']]],
-  ['klientb_1',['klientB',['../struct_trasa.html#aedb304a228300bdc3f76eed1e7b5ff2d',1,'Trasa']]]
+  ['ileklientow_0',['ileKlientow',['../obsluga__danych_8cpp.html#ab924122f4178916d2ed497ddf36c0b01',1,'ileKlientow(std::pair&lt; int, double ** &gt; macierzOdleglosci):&#160;obsluga_danych.cpp'],['../obsluga__danych_8h.html#ab924122f4178916d2ed497ddf36c0b01',1,'ileKlientow(std::pair&lt; int, double ** &gt; macierzOdleglosci):&#160;obsluga_danych.cpp']]]
 ];
