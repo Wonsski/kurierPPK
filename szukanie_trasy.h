@@ -5,9 +5,10 @@
 /**
  * Funkcja wyszukujaca wszystkie mozliwe trasy przejazdu
  * @return Zwraca wektor wektorow zawierajacych wszystkie mozliwe trasy
+ * @param start Identyfikator klienta rozpoczynajacego trase (identyfikator klienta musi być >=1)
  * @param macierzOdleglosci Struktura zawierajaca wielkosc macierzy oraz macierz z danymi wejsciowymi
 */
-std::vector< std::vector<int> > znajdzDostepneTrasy(std::pair<int,double**> macierzOdleglosci);
+std::vector< std::vector<int> > znajdzDostepneTrasy(int start, std::pair<int,double**> macierzOdleglosci);
 
 /**
  * Funkcja rekurencyjna dobierajaca odpowiednie kombinacje 

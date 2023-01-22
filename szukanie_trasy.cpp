@@ -14,7 +14,7 @@ bool czyMozeJechac(const int &klient, const int &pozycja, const std::pair<int,do
     if(odleglosci[trasa[pozycja-1]][klient] == 0){
         return false;
     }
-    
+
     return true;
 }
 
@@ -42,6 +42,7 @@ void szukajTrasy(int pozycja, std::pair<int,double**> &macierzOdleglosci, std::v
 
     for(int i=0; i<wielkoscMacierzy; i++){
 
+                //     Cel | Akt. pozycja
         if(czyMozeJechac(i,pozycja,macierzOdleglosci,trasa) && !odwiedzeni[i]){
 
             //Dopisanie klienta do trasy
@@ -61,19 +62,27 @@ void szukajTrasy(int pozycja, std::pair<int,double**> &macierzOdleglosci, std::v
 
 }
 
-std::vector< std::vector<int> > znajdzDostepneTrasy(std::pair<int,double**> macierzOdleglosci){
+std::vector< std::vector<int> > znajdzDostepneTrasy(int start,std::pair<int,double**> macierzOdleglosci){
     
     std::vector< std::vector<int> > znalezioneTrasy;
 
     std::vector<int> trasa;
-    trasa.push_back(0); //Dodajemy 0 (Klient nr 1) jako rozpoczynajacego trase
+
+    if(start<1){
+        std::cout << std::endl << "Nieodpowiedni identyfikator klienta" << std::endl;
+        return znalezioneTrasy;
+    }
+
+    trasa.push_back(start-1); //Dodajemy klienta rozpoczynajacego trase
+
 
     int wielkoscMacierzy = macierzOdleglosci.first;
     bool odwiedzeni[wielkoscMacierzy];
     for(int i=0; i<wielkoscMacierzy; i++){
         odwiedzeni[i]=false;
     }
-    odwiedzeni[0] = true;
+
+    odwiedzeni[start-1] = true;
 
 
     //Szukanie trasy

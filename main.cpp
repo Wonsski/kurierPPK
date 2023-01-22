@@ -14,31 +14,45 @@ int main(int argc, char *args[]){
         
         std::string nazwa_pliku;
         std::string plik_zapis = "wyjscie.txt"; //Domyslna nazwa pliku wyjsciowego
-        bool wypisuj = false;
         std::pair<int,double**> macierzOdleglosci;
 
-        if(strcmp( args[1], "-v") == 0){
 
-            wypisuj=true;
+        //Sprawdzanie wybranych opcji
+        int licznikWlaczonychOpcji = 0;
+        bool wypisuj = false;
+        bool ustawStart = false;
+        int klient_start = 1;
 
-            if(!args[2]){
-                std::cout << "Dodaj argument z nazwą pliku!" << std::endl;
-                return 0;
+        for(int i=1; i<argc; i++){
+            if(strcmp( args[i], "-v") == 0){
+                wypisuj=true;
+                licznikWlaczonychOpcji++;
             }
-            nazwa_pliku = args[2];
+            if(strcmp( args[i], "-s") == 0){
+                ustawStart=true;
+                licznikWlaczonychOpcji+=2;    //Plus parametr s  
 
-            if(args[3]){
-                plik_zapis = args[3];
+                if(args[i+1]){
+                    klient_start = atoi(args[i+1]); 
+                }else{
+                    std::cout << "Opcja -s potrzebuje parametru. Instrukcja jak to zrobić jest dostępna po uruchomieniu programu bez parametrów" << std::endl;
+                    return 0;
+                }    
+            }
+        }
+
+        int indeksParamNazwaPliku = 1+licznikWlaczonychOpcji;
+        int indeksParamNazwaZapisPliku = 2+licznikWlaczonychOpcji;
+
+        if(args[indeksParamNazwaPliku] && licznikWlaczonychOpcji+1<argc){
+            nazwa_pliku = args[indeksParamNazwaPliku];
+
+            if(args[indeksParamNazwaZapisPliku]){
+                plik_zapis = args[indeksParamNazwaZapisPliku];
             }
         }else{
-            if(!args[1]){
-                std::cout << "Dodaj argument z nazwą pliku!" << std::endl;
-                return 0;
-            }
-            nazwa_pliku = args[1];
-            if(args[2]){
-                plik_zapis = args[2];
-            }
+            std::cout << "Podaj poprawnie parametry. Instrukcja jak to zrobić jest dostępna po uruchomieniu programu bez parametrów" << std::endl;
+            return 0;
         }
 
         //Wczytywanie danych
@@ -51,7 +65,9 @@ int main(int argc, char *args[]){
         }
 
         //Generowanie dostepnych tras
-        std::vector< std::vector<int> >znalezioneTrasy = znajdzDostepneTrasy(macierzOdleglosci);
+        std::cout << std::endl << "Start od klienta nr: " << klient_start << std::endl;
+
+        std::vector< std::vector<int> >znalezioneTrasy = znajdzDostepneTrasy(klient_start,macierzOdleglosci);
         
         if(znalezioneTrasy.size()>0){
             

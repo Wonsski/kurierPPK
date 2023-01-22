@@ -20,6 +20,7 @@ void wypiszInstrukcje(std::string nazwa_programu){
 
     std::cout << std::endl << "Dostępne opcje: " << std::endl;
     std::cout << "  -v    Tryb \"gadatliwy\" wypisujący etapy po kolei wykonywanych operacji" << std::endl;
+    std::cout << "  -s <numer klienta>    Wybór klienta rozpoczynającego trasę" << std::endl;
 
     std::cout << std::endl << "Argumenty programu: " << std::endl;
     std::cout << "  nazwa_pliku       [WYMAGANE]   Nazwa pliku wejściowego w którym znajdują się dane dot. odległości od klientów" << std::endl;
