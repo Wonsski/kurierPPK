@@ -10,6 +10,18 @@
 void wypiszInstrukcje(std::string nazwa_programu);
 
 /**
+ * Funkcja ładuje parametry do odpowiednich zmiennych
+ * @param argc Liczba argumentow
+ * @param args Tablica argumentow
+ * @param nazwa_pliku Nazwa otwieranego pliku
+ * @param plik_zapis Nazwa pliku zapisu
+ * @param wypisuj Zmienna przechowujaca informacje czy maja byc wypisywane dodatkowe informacje
+ * @param klient_start Zmienna przechowujaca parametr klienta startowego 
+ * @return Zwraca true, jezeli wprowadzone argumenty są prawidłowe
+*/
+bool zaladujArgumenty(int argc, char *args[], std::string &nazwa_pliku, std::string &plik_zapis, bool &wypisuj, int &klient_start);
+
+/**
  * Funkcja wczytujace dane z pliku wejsciowego i normalizujaca dane wejsciowe do odpowiedniego formatu
  * @return Zwraca macierz zawierającą odleglosci pomiedzy wszystkimi punktami
  * @param nazwa_pliku Nazwa pliku tekstowego z którego wczytujemy dane wejściowe

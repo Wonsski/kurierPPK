@@ -39,12 +39,48 @@ void wypiszInstrukcje(std::string nazwa_programu){
     
 }
 
+bool zaladujArgumenty(int argc, char *args[], std::string &nazwa_pliku, std::string &plik_zapis, bool &wypisuj, int &klient_start){
+    int licznikWlaczonychOpcji = 0;
+
+    for(int i=1; i<argc; i++){
+        if(strcmp( args[i], "-v") == 0){
+            wypisuj=true;
+            licznikWlaczonychOpcji++;
+        }
+        if(strcmp( args[i], "-s") == 0){
+            licznikWlaczonychOpcji+=2;    //Plus parametr s  
+
+            if(args[i+1]){
+                klient_start = atoi(args[i+1]); 
+            }else{
+                std::cout << "Opcja -s potrzebuje parametru. Instrukcja jak to zrobić jest dostępna po uruchomieniu programu bez parametrów" << std::endl;                    
+                return false;
+            }    
+        }
+    }
+
+    int indeksParamNazwaPliku = 1+licznikWlaczonychOpcji;
+    int indeksParamNazwaZapisPliku = 2+licznikWlaczonychOpcji;
+
+    if(args[indeksParamNazwaPliku] && licznikWlaczonychOpcji+1<argc){
+        nazwa_pliku = args[indeksParamNazwaPliku];
+
+        if(args[indeksParamNazwaZapisPliku]){
+            plik_zapis = args[indeksParamNazwaZapisPliku];
+        }
+    }else{
+        std::cout << "Podaj poprawnie parametry. Instrukcja jak to zrobić jest dostępna po uruchomieniu programu bez parametrów" << std::endl;
+        return false;
+    }
+
+    return true;
+}
+
 std::pair<int,double**> wczytajPlik(const std::string &nazwa_pliku){
     
     std::ifstream plik(nazwa_pliku);
 
     if(plik){
-        std::stringstream ss;
         std::string tekst;
 
         std::vector<Trasa> wszystkieOdcinki; //Zbior wszystkich tras
@@ -53,7 +89,7 @@ std::pair<int,double**> wczytajPlik(const std::string &nazwa_pliku){
 
         while(std::getline(plik, tekst, ',')){ //Pobieranie kawalkow tekstu oddzielonych przecinkiem
 
-
+            std::stringstream ss;
             Trasa trasa; //Struktura dla pojedynczego odcinka
             
             int licznik=0;

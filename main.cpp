@@ -13,50 +13,18 @@ int main(int argc, char *args[]){
         wypiszInstrukcje(args[0]);
     }else{ //Dla przynajmniej jednego argumentu
         
+        //Argumenty programu
         std::string nazwa_pliku;
         std::string plik_zapis = "wyjscie.txt"; //Domyslna nazwa pliku wyjsciowego
-        std::pair<int,double**> macierzOdleglosci;
-
-
-        //Sprawdzanie wybranych opcji
-        int licznikWlaczonychOpcji = 0;
         bool wypisuj = false;
-        bool ustawStart = false;
         int klient_start = 1;
 
-        for(int i=1; i<argc; i++){
-            if(strcmp( args[i], "-v") == 0){
-                wypisuj=true;
-                licznikWlaczonychOpcji++;
-            }
-            if(strcmp( args[i], "-s") == 0){
-                ustawStart=true;
-                licznikWlaczonychOpcji+=2;    //Plus parametr s  
+        if(!zaladujArgumenty(argc, args, nazwa_pliku, plik_zapis, wypisuj, klient_start)){return 0;}
 
-                if(args[i+1]){
-                    klient_start = atoi(args[i+1]); 
-                }else{
-                    std::cout << "Opcja -s potrzebuje parametru. Instrukcja jak to zrobić jest dostępna po uruchomieniu programu bez parametrów" << std::endl;
-                    return 0;
-                }    
-            }
-        }
-
-        int indeksParamNazwaPliku = 1+licznikWlaczonychOpcji;
-        int indeksParamNazwaZapisPliku = 2+licznikWlaczonychOpcji;
-
-        if(args[indeksParamNazwaPliku] && licznikWlaczonychOpcji+1<argc){
-            nazwa_pliku = args[indeksParamNazwaPliku];
-
-            if(args[indeksParamNazwaZapisPliku]){
-                plik_zapis = args[indeksParamNazwaZapisPliku];
-            }
-        }else{
-            std::cout << "Podaj poprawnie parametry. Instrukcja jak to zrobić jest dostępna po uruchomieniu programu bez parametrów" << std::endl;
-            return 0;
-        }
+        
 
         //Wczytywanie danych
+        std::pair<int,double**> macierzOdleglosci;
         macierzOdleglosci = wczytajPlik(nazwa_pliku);
         
 
@@ -104,6 +72,8 @@ int main(int argc, char *args[]){
             std::cout << "Nie udało się utworzyć trasy korzystając z wprowadzonych danych" <<std::endl;
             std::cout << "Wprowadzony plik wejściowy: " << nazwa_pliku << std::endl << std::endl;
         }
+
+        delete[] macierzOdleglosci.second; //Czyszczenie pamieci
     }
 
     return 0;
